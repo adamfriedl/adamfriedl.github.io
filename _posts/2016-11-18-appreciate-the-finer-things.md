@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Appreciating the Finer Things
+title: Appreciate the Finer Things
 date: 2016-11-18
 categories: code, bootcamp
 ---
