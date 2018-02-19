@@ -8,8 +8,13 @@
         "theme-{{ site.theme_color | default: "black" }}.scss"
 ;
 
+// Color for linkedin social icon
+.linkedin {
+        fill: $color-background;
+}
 
 
+// Syntax highlighting
 pre.highlight {background-color: #22282A}
 .highlight .hll { background-color: #404040 }
 .highlight  { color: #d0d0d0 }
