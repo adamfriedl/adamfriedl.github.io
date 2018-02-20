@@ -6,7 +6,7 @@ permalink: /about/
 
 ### Interesting Stuff
 
-Regardless of the field, the success I've found in my career results from a lifelong obsession with learning. I became a software developer after I worked with some tech folks on a law-related project and saw how much of their job involved learning exciting new things.
+Regardless of the field, the success I've found in my career results from a lifelong obsession with learning. I decided to become a software developer after working with some tech folks and seeing how much of their job involved learning new things.
 
 My other work has been as a public interest lawyer and consultant, advocating on a wide range of justice reform issues both in New York and across the United States.
 
