@@ -4,4 +4,6 @@ title: Projects
 permalink: /projects/
 ---
 
-This is the Projects page.
+{% for project in site.data.projects %}
+{% include project_block.html %}
+{% endfor %}
