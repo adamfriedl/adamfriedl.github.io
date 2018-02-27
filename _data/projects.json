@@ -25,7 +25,7 @@
   {
     "title": "The Recipe Box",
     "description":
-      "A web application for creating and sharing recipes. Built with Rails, and uses OminAuth for authentication via Facebook and jQuery for updates without page refresh.",
+      "A web application for creating and sharing recipes. Built with Rails. Uses OminAuth for authentication via Facebook and jQuery for updates without page refresh.",
     "github": "https://github.com/adamfriedl/recipe-ajax",
     "demo": "https://recipeajax.herokuapp.com/"
   },
