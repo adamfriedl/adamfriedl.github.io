@@ -1,9 +1,9 @@
-—-
+---
 layout: post
-title: Learning and working and parenting
+title: Learning and Working and Family-ing
 date: 2018-03-07
 categories:
-—-
+---
 
 There are literally thousands of resources these days that can help you learn how to code. Do you have the desire and the grit? You can become a software developer. This is definitely true as far as it goes, but it often silently assumes that you have an infinite supply of other equally important resources — namely time. If that's true for you, mazel! Take advantage. But, for many of us, it isn't true — particularly those raising young kids and working full-time.
 
