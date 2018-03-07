@@ -9,8 +9,11 @@
 p a {
   text-decoration: underline;
   text-decoration-color: $color-background;
-  text-decoration-style: double;  
-
+  text-decoration-style: double;
+  &:hover {
+    text-decoration-color: $color-background;
+    text-decoration-style: wavy;
+  }
 } // Syntax highlighting
 pre.highlight {
   background-color: #22282a;
