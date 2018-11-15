@@ -2,7 +2,7 @@
 layout: post
 title: Social Media — Sad Face
 date: 2018-11-15
-published: false
+published: true
 categories:
 ---
 
@@ -12,4 +12,4 @@ I largely stopped using Facebook and Instagram a few months ago for this reason.
 
 To paraphrase a line that means a lot to me, comparison at scale may be the dubious luxury of normal men, but for me it's poison.
 
-- I still hop on Twitter sometimes because I learn about so much cool tech stuff that way, and it tends to be more news and witty jokes and less ego-blogging (I learned that term from [Chantal](https://www.bustle.com/p/who-is-chantal-trujillo-the-made-in-mexico-star-had-a-significant-following-before-the-show-even-debuted-12083756) on _Made in Mexico_. ) The irony.
+- I still hop on Twitter sometimes because I learn about so much cool tech stuff that way, and it tends to be more news and witty jokes and less _ego-blogging_ (I learned that term from [Chantal](https://www.bustle.com/p/who-is-chantal-trujillo-the-made-in-mexico-star-had-a-significant-following-before-the-show-even-debuted-12083756) on _Made in Mexico_. The irony.)
