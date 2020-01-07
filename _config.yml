@@ -15,8 +15,9 @@ linkedin_username: adamfriedl
 
 # Build settings
 markdown: kramdown
+remote_theme: broccolini/swiss
 theme: jekyll-swiss
-theme_color: yellow
+theme_color: blue
 plugins:
   - jekyll-feed
 
