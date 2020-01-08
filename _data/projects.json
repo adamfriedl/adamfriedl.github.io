@@ -1,4 +1,18 @@
 [
+{
+    "title": "Github Finder",
+    "description":
+      "React frontend app that pulls data from Github APIs. Uses the latest React hooks and context APIs for an all-functional component implementation.",
+    "github": "https://github.com/adamfriedl/github-finder",
+    "demo": "https://adamsgithubfinder2019.netlify.com/"
+  },
+{
+    "title": "Rikers Today",
+    "description":
+      "A web application that breaks down who is America's most infamous jail today. Created with React, Rebass, React Router, and the NYC Open-Data API.",
+    "github": "https://github.com/adamfriedl/rikerstoday",
+    "demo": "http://rikerstoday.info"
+  },
   {
     "title": "Cafe Roulette",
     "description":
@@ -7,13 +21,6 @@
       "Front-end built with React, Redux, React Router, Google Maps API, and Material-UI. Back-end API built with Ruby on Rails.",
     "github": "https:github.com/adamfriedl/caferoulette",
     "demo": "https://adamfriedl.com/caferoulette"
-  },
-  {
-    "title": "Rikers Today",
-    "description":
-      "A web application that breaks down who is America's most infamous jail today. Created with React, Rebass, React Router, and the NYC Open-Data API.",
-    "github": "https://github.com/adamfriedl/rikerstoday",
-    "demo": "http://rikerstoday.info"
   },
   {
     "title": "Lingo Bingo",
