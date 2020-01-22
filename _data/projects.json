@@ -1,46 +1,45 @@
 [
-{
-    "title": "Github Finder",
-    "description":
-      "React frontend app that pulls data from Github APIs. Uses the latest React hooks and context APIs for an all-functional component implementation.",
-    "github": "https://github.com/adamfriedl/github-finder",
-    "demo": "https://adamsgithubfinder2019.netlify.com/"
-  },
-{
-    "title": "Rikers Today",
-    "description":
-      "A web application that breaks down who is America's most infamous jail today. Created with React, Rebass, React Router, and the NYC Open-Data API.",
-    "github": "https://github.com/adamfriedl/rikerstoday",
-    "demo": "http://rikerstoday.info"
-  },
-  {
-    "title": "Cafe Roulette",
-    "description":
-      "A whimsical webapp for choosing your coffee destination in midtown Manhattan. Click the coffee cup and add your favorite spot.",
-    "built_with":
-      "Front-end built with React, Redux, React Router, Google Maps API, and Material-UI. Back-end API built with Ruby on Rails.",
-    "github": "https:github.com/adamfriedl/caferoulette",
-    "demo": "https://adamfriedl.com/caferoulette"
-  },
-  {
-    "title": "Lingo Bingo",
-    "description":
-      "A corporate-speak bingo webapp to entertain your team during the next all-hands conference call. Built with React, Rebass, and React Router.",
-    "github": "https://github.com/adamfriedl/lingo-bingo",
-    "demo": "https://adamfriedl.com/lingo-bingo"
-  },
-  {
-    "title": "The Recipe Box",
-    "description":
-      "A web application for creating and sharing recipes. Built with Rails. Uses OminAuth for authentication via Facebook and jQuery for updates without page refresh.",
-    "github": "https://github.com/adamfriedl/recipe-ajax",
-    "demo": "https://recipeajax.herokuapp.com/"
-  },
-  {
-    "title": "Do You Even Lift, Bro?",
-    "description":
-      "A webapp for keeping track of all the inside jokes, memes, and secret language that you and your friends share. Built with Sinatra. Uses Bcrypt for authentication and styled with Material Design Lite.",
-    "github": "https://github.com/adamfriedl/our-memes",
-    "demo": "https://drive.google.com/open?id=1bP-F_CLCLUyVYA006ylgBOKY_8IvC8TP"
-  }
+    {
+        "title": "Contact Keeper",
+        "description": "Full-stack contacts app. Node.js / Express backend with JSON Web Token authentication. React frontend with hooks, React Router, CSS Transition Group effects, unicorns 🦄... Mongo Cloud DB.",
+        "github": "https://github.com/adamfriedl/keeper-api/",
+        "demo": "https://vast-fjord-81268.herokuapp.com/"
+    },
+    {
+        "title": "Github Finder",
+        "description": "React frontend app that pulls data from Github APIs. Uses the latest React hooks and context APIs for an all-functional component implementation.",
+        "github": "https://github.com/adamfriedl/github-finder",
+        "demo": "https://adamsgithubfinder2019.netlify.com/"
+    },
+    {
+        "title": "Rikers Today",
+        "description": "A web application that breaks down who is America's most infamous jail today. Created with React, Rebass, React Router, and the NYC Open-Data API.",
+        "github": "https://github.com/adamfriedl/rikerstoday",
+        "demo": "http://rikerstoday.info"
+    },
+    {
+        "title": "Cafe Roulette",
+        "description": "A whimsical webapp for choosing your coffee destination in midtown Manhattan. Click the coffee cup and add your favorite spot.",
+        "built_with": "Front-end built with React, Redux, React Router, Google Maps API, and Material-UI. Back-end API built with Ruby on Rails.",
+        "github": "https:github.com/adamfriedl/caferoulette",
+        "demo": "https://adamfriedl.com/caferoulette"
+    },
+    {
+        "title": "Lingo Bingo",
+        "description": "A corporate-speak bingo webapp to entertain your team during the next all-hands conference call. Built with React, Rebass, and React Router.",
+        "github": "https://github.com/adamfriedl/lingo-bingo",
+        "demo": "https://adamfriedl.com/lingo-bingo"
+    },
+    {
+        "title": "The Recipe Box",
+        "description": "A web application for creating and sharing recipes. Built with Rails. Uses OminAuth for authentication via Facebook and jQuery for updates without page refresh.",
+        "github": "https://github.com/adamfriedl/recipe-ajax",
+        "demo": "https://recipeajax.herokuapp.com/"
+    },
+    {
+        "title": "Do You Even Lift, Bro?",
+        "description": "A webapp for keeping track of all the inside jokes, memes, and secret language that you and your friends share. Built with Sinatra. Uses Bcrypt for authentication and styled with Material Design Lite.",
+        "github": "https://github.com/adamfriedl/our-memes",
+        "demo": "https://drive.google.com/open?id=1bP-F_CLCLUyVYA006ylgBOKY_8IvC8TP"
+    }
 ]
