@@ -6,23 +6,22 @@
 title: Adam Friedl
 email: ajfriedl@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Software engineer. Former public interest lawyer. 
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+    Software engineer. Former public interest lawyer.
+baseurl: '' # the subpath of your site, e.g. /blog
+url: '' # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: adamfriedl
-github_username:  adamfriedl
+github_username: adamfriedl
 linkedin_username: adamfriedl
 
 # Build settings
 markdown: kramdown
-remote_theme: broccolini/swiss
+# remote_theme: broccolini/swiss
 theme: jekyll-swiss
 theme_color: blue
 plugins:
-  - jekyll-feed
+    - jekyll-feed
 
 github: [metadata]
-
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

@@ -1,17 +1,17 @@
 <!-- Renders project title and description. -->
 
-<div class="py-2 mb-2 prose">
-  <h2 class="h1 lh-condensed col-9 mt-0">
-    <a class="link-primary" href="{{ project.demo }}">{{ project.title }}</a>
-  </h2>
-  <p>
-    {{ project.description | strip_html }}
-  </p>
-  <p>
-    {{ project.built_with }}
-  </p>
-  <p>
-    <a href="{{ project.github }}">Github</a> |
-    <a href="{{ project.demo }}">Live Demo</a>
-  </p>
+<div class="py-2 mb-2">
+    <h2 class="h1 lh-condensed col-9 mt-0">
+        <a class="link-primary" href="{{ project.demo }}">{{ project.title }}</a>
+    </h2>
+    <p>
+        {{ project.description | strip_html }}
+    </p>
+    <p>
+        {{ project.built_with }}
+    </p>
+    <p>
+        <a class="text-accent" href="{{ project.github }}">Github</a> |
+        <a class="text-accent" href="{{ project.demo }}">Live Demo</a>
+    </p>
 </div>
