@@ -1,3 +1,9 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 // Styling markdown output
 
 // Code formatting
@@ -15,125 +21,131 @@ code {
     padding: 1px 0px;
 }
 
+// Footer
+.page {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 100%;
+}
 
 .prose {
+    //   a {
+    //     text-decoration: underline dotted;
 
-//   a {
-//     text-decoration: underline dotted;
+    //     &:hover {
+    //       text-decoration: underline;
+    //     }
+    //   }
 
-//     &:hover {
-//       text-decoration: underline;
-//     }
-//   }
+    p,
+    ol,
+    ul {
+        font-size: $prose-font-size;
+        margin-bottom: 1em;
+        width: 100%;
 
-  p, ol, ul {
-    font-size: $prose-font-size;
-    margin-bottom: 1em;
-    width: 100%;
-
-    @media (min-width: $breakpoint-lg) {
-      width: (10 / 12 * 100%); // matches col-10
+        @media (min-width: $breakpoint-lg) {
+            width: (10 / 12 * 100%); // matches col-10
+        }
     }
 
-  }
-
-  ul, ol {
-    padding-left: 40px;
-  }
-
-  li {
-    margin-bottom: 0.5em;
-
-    ul li, ol li {
-      margin-bottom: 0;
-    }
-  }
-
-  img {
-
-    max-width: 100%;
-
-    @media (min-width: $breakpoint-lg) {
-      max-width: (12 / 10 * 100%); // make image fill width of container on desktop
+    ul,
+    ol {
+        padding-left: 40px;
     }
 
-  }
+    li {
+        margin-bottom: 0.5em;
 
-  blockquote {
-    line-height: 1.375;
-    padding-left: 20px;
-    margin: 40px 0 40px -16px;
-    border-left: $spacer-1 solid $color-border;
-    font-style: italic;
-
-    p {
-      font-size: 24px;
+        ul li,
+        ol li {
+            margin-bottom: 0;
+        }
     }
 
-    @media (min-width: $breakpoint-lg) {
-      padding-left: $spacer-3;
-      margin: $spacer-4 0 $spacer-4 -40px;
-      max-width: (11 / 10 * 100%);
+    img {
+        max-width: 100%;
 
-      p {
-        font-size: 32px;
-      }
-
+        @media (min-width: $breakpoint-lg) {
+            max-width: (
+                12 / 10 * 100%
+            ); // make image fill width of container on desktop
+        }
     }
 
-  }
+    blockquote {
+        line-height: 1.375;
+        padding-left: 20px;
+        margin: 40px 0 40px -16px;
+        border-left: $spacer-1 solid $color-border;
+        font-style: italic;
 
-  hr {
-    color: $color-body-text;
-    border-style: solid;
-    border-width: thin;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-  }
+        p {
+            font-size: 24px;
+        }
 
-  dt {
-    font-weight: bold;
-    font-style: italic;
-    line-height: 1.25;
-  }
+        @media (min-width: $breakpoint-lg) {
+            padding-left: $spacer-3;
+            margin: $spacer-4 0 $spacer-4 -40px;
+            max-width: (11 / 10 * 100%);
 
-  dd {
-    font-style: italic;
-    margin-bottom: 0.5em;
-  }
-
-  // Markdown tables
-  table {
-    border-collapse: collapse;
-    display: block;
-    width: 100%;
-    margin-bottom: 1.5em;
-    overflow: auto;
-    // For Firefox to horizontally scroll wider tables.
-    word-break: normal;
-    word-break: keep-all;
-
-    th {
-      font-weight: bold;
-      text-align: left;
+            p {
+                font-size: 32px;
+            }
+        }
     }
 
-    th,
-    td {
-      padding: $spacer-2 $spacer-3 $spacer-2 2px;
-      border-top: 1px solid $color-body-text;
-      border-bottom: 1px solid $color-body-text;
+    hr {
+        color: $color-body-text;
+        border-style: solid;
+        border-width: thin;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
-    tr {
-      background-color: #fff;
-      border-top: 1px solid $color-body-text;
+    dt {
+        font-weight: bold;
+        font-style: italic;
+        line-height: 1.25;
     }
 
-    tr th {
-      border-top: 2px solid $color-body-text;
-      border-bottom: 2px solid $color-body-text;
+    dd {
+        font-style: italic;
+        margin-bottom: 0.5em;
     }
-  }
 
+    // Markdown tables
+    table {
+        border-collapse: collapse;
+        display: block;
+        width: 100%;
+        margin-bottom: 1.5em;
+        overflow: auto;
+        // For Firefox to horizontally scroll wider tables.
+        word-break: normal;
+        word-break: keep-all;
+
+        th {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: $spacer-2 $spacer-3 $spacer-2 2px;
+            border-top: 1px solid $color-body-text;
+            border-bottom: 1px solid $color-body-text;
+        }
+
+        tr {
+            background-color: #fff;
+            border-top: 1px solid $color-body-text;
+        }
+
+        tr th {
+            border-top: 2px solid $color-body-text;
+            border-bottom: 2px solid $color-body-text;
+        }
+    }
 }

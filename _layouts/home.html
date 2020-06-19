@@ -1,70 +1,91 @@
 <!DOCTYPE html>
 <html>
+    {% include head.html %}
 
-{% include head.html %}
+    <body>
+        <div class="page">
+            <header class="header-background">
+                <div class="clearfix border-bottom-thick header-border">
+                    <ul
+                        class="list-reset right py-1 header-text font-smoothing"
+                    >
+                        {% for my_page in site.pages %} {% if my_page.title %}
+                        <li class="inline-block">
+                            <a
+                                class="align-middle link-primary header-link mr-2"
+                                href="{{ my_page.url | prepend: site.baseurl }}"
+                                >{{ my_page.title }}</a
+                            >
+                        </li>
+                        {% endif %} {% endfor %}
+                    </ul>
+                </div>
 
-<body>
+                <div class="container mx-auto px-2 mb-2 clearfix header-text">
+                    <h1
+                        class="h0 inline-block col-9 sm-width-full py-4 mt-3 header-title"
+                    >
+                        {{ site.title }}
+                    </h1>
 
-  <div>
+                    <div class="clearfix mb-4 py-1">
+                        <div class="col-4 sm-width-full left border-top-thin">
+                            <div class="table">
+                                <div class="inline-block mt-3 mr-1">
+                                    {% include dot-accent.html %}
+                                </div>
+                                <div class="inline-block mt-3 mr-1">
+                                    {% include dot-accent.html %}
+                                </div>
+                                <div class="inline-block mt-3">
+                                    {% include github.html %}
+                                </div>
+                            </div>
+                            <!-- Set site description in config.yml -->
+                            <p class="h4 lh-condensed font-smoothing mt-2 py-1">
+                                {{ site.description }}
+                            </p>
+                        </div>
 
-    <header class="header-background">
+                        <div
+                            class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 table"
+                        >
+                            <div class="inline-block mt-3 mr-1">
+                                {% include linkedin.html %}
+                            </div>
+                            <div class="inline-block mt-3">
+                                {% include {{ site.social_link | default:
+                                "twitter" }}.html %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
 
-      <div class="clearfix border-bottom-thick header-border">
-        <ul class="list-reset right py-1 header-text font-smoothing">
-          {% for my_page in site.pages %} {% if my_page.title %}
-          <li class="inline-block">
-            <a class="align-middle link-primary header-link mr-2" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-          </li>
-          {% endif %} {% endfor %}
-        </ul>
-      </div>
+            <div class="main">
+                <div class="container mx-auto px-2 py-4">
+                    <h1 style="font-size: 48px;">About</h1>
+                    <p>
+                        Regardless of the field, the success I've found in my
+                        career results from a lifelong obsession with learning.
+                        I decided to become a professional software developer
+                        after working with some tech folks and seeing how much
+                        of their job involved learning new things.
+                    </p>
 
-      <div class="container mx-auto px-2 mb-2 clearfix header-text">
-        <h1 class="h0 inline-block col-9 sm-width-full py-4 mt-3 header-title">{{ site.title }}</h1>
+                    <p>
+                        My previous career was as a public interest lawyer and
+                        consultant, advocating on a wide range of civil and
+                        criminal justice reform issues across the United States.
+                    </p>
 
-        <div class="clearfix mb-4 py-1">
-          <div class="col-4 sm-width-full left border-top-thin">
-            <div class="table">
-              <div class="inline-block mt-3 mr-1">
-                {% include dot-accent.html %}
-              </div>
-              <div class="inline-block mt-3 mr-1">
-                {% include dot-accent.html %}
-              </div>
-              <div class="inline-block mt-3">
-                {% include github.html %}
-              </div>
+                    <p>
+                        Recreational interests include languages (Spanish,
+                        Italian, French), surfing, and maps.
+                    </p>
+                </div>
             </div>
-            <!-- Set site description in config.yml -->
-            <p class="h4 lh-condensed font-smoothing mt-2 py-1">{{ site.description }}</p>
-          </div>
-
-          <div class="col-4 sm-width-full left border-top-thin mt-3 mt-lg-0 ml-lg-4 table">
-            <div class="inline-block mt-3 mr-1">
-              {% include linkedin.html %}
-            </div>
-            <div class="inline-block mt-3">
-              {% include {{ site.social_link | default: "twitter" }}.html %}
-            </div>
-          </div>
+            {% include footer.html %}
         </div>
-
-      </div>
-    </header>
-
-    <div class="container mx-auto px-2 py-4">
-      <h1 style="font-size: 48px">Recent Writing</h1>
-      {% for post in site.posts limit: 3 %} {% include post_block.html %} {% endfor %}
-      <p class="h4 bold text-accent">
-        <a href="/writing/">See the rest</a>
-      </p>
-    </div>
-
-
-  </div>
-
-  {% include footer.html %}
-
-</body>
-
+    </body>
 </html>
