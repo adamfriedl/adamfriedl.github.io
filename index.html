@@ -1,66 +1,291 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Friedl</title>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #1a1a1a;
+        --accent-color: #000000;
+        --secondary-text: #666666;
+      }
 
-  <title>Adam Friedl</title>
-  <meta name="description" content="Adam Friedl's name site.">
-  <meta name="author" content="Adam Friedl">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  <meta property="og:title" content="Adam Friedl">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Adam Friedl's homepage">
-  <meta property="og:image" content="image.png">
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 15vh;
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
 
-  <link rel="icon" href="./favicon.ico">
+      .container {
+        max-width: 1000px;
+        width: 100%;
+        padding: 2rem;
+        z-index: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+      }
 
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<style>
-a {
-  border-bottom: 3px solid #cbf120;
-  transition: all 0.25s linear;
-  position: relative;
-}
+      .content-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-a:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #61a3ff;
-  position: absolute;
-  left: 0;
-  bottom: -3px; /* this is to match where the border is */
-  transform-origin: left; 
-  transform: scale(0);
-  transition: 0.25s linear;
-/*   will-change: transform; */
-}
+      h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
 
-a:hover:before {
-  transform: scale(1);
-}
-</style>
-</head>
+      p {
+        font-size: 1.25rem;
+        color: var(--secondary-text);
+        margin-bottom: 2.5rem;
+        max-width: 480px;
+      }
 
-<body>
-  <div class="h-screen grid grid-cols-5 grid-rows-5 lg:grid-rows-3 mx-20">
-    <div class="row-start-2 col-span-5 lg:col-span-3">
-      <h1 class="text-6xl font-bold mb-8">Adam Friedl</h1>
-      <div class="text-lg">
-      <div class="mb-6">Hey there, I'm a Lead Software Engineer at Rakuten. Before entering tech, I was a public-interest lawyer.</div>
-      <div>
-      
-      <a href="https://www.linkedin.com/in/adamfriedl">Linkedin</a>
+      .links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        position: relative;
+        padding-bottom: 4px;
+      }
+
+      a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--accent-color);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+      }
+
+      a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      /* Animation Container - Left column */
+      .animation-container {
+        flex-shrink: 0;
+        pointer-events: none;
+        margin-bottom: 0;
+      }
+
+      #ascii-animation {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 14px;
+        line-height: 0.85;
+        color: #1a1a1a;
+        opacity: 0.8;
+        margin: 0;
+        white-space: pre;
+        letter-spacing: 0.1em;
+      }
+
+      @media (max-width: 850px) {
+        .container {
+          flex-direction: column;
+          gap: 2rem;
+          padding: 1.5rem;
+          align-items: center;
+          text-align: center;
+        }
+        .content-right {
+          align-items: center;
+        }
+        .content-right p {
+          text-align: left;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #ascii-animation {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="animation-container">
+        <pre id="ascii-animation"></pre>
       </div>
-      <div>
-        <a href="mailto:af@adamfriedl.net">af@adamfriedl.net</a>
-      </div>
+
+      <div class="content-right">
+        <h1>Adam Friedl</h1>
+        <p>
+          Senior DevOps Engineer at Rakuten. Former public-interest lawyer. Thanks for stopping by
+          my corner of the internet!
+        </p>
+        <div class="links">
+          <a href="https://github.com/adamfriedl">GitHub</a>
+          <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
+          <a href="mailto:af@adamfriedl.net">Email</a>
+        </div>
       </div>
     </div>
 
-  </div>
-</body>
-</html6
+    <script>
+      const pre = document.getElementById('ascii-animation');
+
+      const width = 52;
+      const height = 26;
+      const chars = '.:-=+*#%@';
+
+      let A = 0,
+        B = 0,
+        C = 0; // Rotation angles
+
+      // Pyramid vertices
+      const vertices = [
+        { x: 0, y: 1.2, z: 0 }, // Apex
+        { x: -0.8, y: -0.6, z: 0.8 }, // Base 1
+        { x: 0.8, y: -0.6, z: 0.8 }, // Base 2
+        { x: 0.8, y: -0.6, z: -0.8 }, // Base 3
+        { x: -0.8, y: -0.6, z: -0.8 }, // Base 4
+      ];
+
+      // Faces (triangles)
+      const faces = [
+        [0, 1, 2],
+        [0, 2, 3],
+        [0, 3, 4],
+        [0, 4, 1], // Sides
+        [1, 3, 2],
+        [1, 4, 3], // Base (2 triangles)
+      ];
+
+      const light = { x: 0.3, y: 1, z: 0.8 };
+      // Normalize light
+      const mag = Math.sqrt(light.x ** 2 + light.y ** 2 + light.z ** 2);
+      light.x /= mag;
+      light.y /= mag;
+      light.z /= mag;
+
+      function rotate(v, A, B, C) {
+        let { x, y, z } = v;
+        // X
+        let ny = y * Math.cos(A) - z * Math.sin(A);
+        let nz = y * Math.sin(A) + z * Math.cos(A);
+        y = ny;
+        z = nz;
+        // Y
+        let nx = x * Math.cos(B) + z * Math.sin(B);
+        nz = -x * Math.sin(B) + z * Math.cos(B);
+        x = nx;
+        z = nz;
+        // Z
+        nx = x * Math.cos(C) - y * Math.sin(C);
+        ny = x * Math.sin(C) + y * Math.cos(C);
+        x = nx;
+        y = ny;
+        return { x, y, z };
+      }
+
+      function render() {
+        const buffer = Array(height)
+          .fill()
+          .map(() => Array(width).fill(' '));
+        const zBuffer = Array(height)
+          .fill()
+          .map(() => Array(width).fill(-Infinity));
+
+        faces.forEach((face) => {
+          const v0 = rotate(vertices[face[0]], A, B, C);
+          const v1 = rotate(vertices[face[1]], A, B, C);
+          const v2 = rotate(vertices[face[2]], A, B, C);
+
+          // Normal
+          const edge1 = { x: v1.x - v0.x, y: v1.y - v0.y, z: v1.z - v0.z };
+          const edge2 = { x: v2.x - v0.x, y: v2.y - v0.y, z: v2.z - v0.z };
+          const normal = {
+            x: edge1.y * edge2.z - edge1.z * edge2.y,
+            y: edge1.z * edge2.x - edge1.x * edge2.z,
+            z: edge1.x * edge2.y - edge1.y * edge2.x,
+          };
+          const nMag = Math.sqrt(normal.x ** 2 + normal.y ** 2 + normal.z ** 2);
+          normal.x /= nMag;
+          normal.y /= nMag;
+          normal.z /= nMag;
+
+          const luminance = normal.x * light.x + normal.y * light.y + normal.z * light.z;
+
+          // Fix blank faces: Use a minimum luminance for back-facing or side-facing triangles
+          // instead of culling them entirely.
+          const displayLuminance = Math.max(0.1, luminance);
+
+          const charIdx = Math.floor(displayLuminance * (chars.length - 1));
+          const char = chars[charIdx];
+
+          // Rasterize triangle
+          for (let i = 0; i <= 20; i++) {
+            for (let j = 0; j <= 20 - i; j++) {
+              const a = i / 20,
+                b = j / 20,
+                c = 1 - a - b;
+              const x = v0.x * a + v1.x * b + v2.x * c;
+              const y = v0.y * a + v1.y * b + v2.y * c;
+              const z = v0.z * a + v1.z * b + v2.z * c;
+
+              const screenX = Math.floor((width / 2) * (0.8 * x + 1));
+              const screenY = Math.floor((height / 2) * (1 - 0.7 * y));
+
+              if (screenX >= 0 && screenX < width && screenY >= 0 && screenY < height) {
+                if (z > zBuffer[screenY][screenX]) {
+                  zBuffer[screenY][screenX] = z;
+                  buffer[screenY][screenX] = char;
+                }
+              }
+            }
+          }
+        });
+
+        pre.textContent = buffer.map((row) => row.join('')).join('\n');
+      }
+
+      function update() {
+        A += 0.01;
+        B += 0.015;
+        C += 0.005;
+        render();
+        requestAnimationFrame(update);
+      }
+
+      update();
+    </script>
+  </body>
+</html>
