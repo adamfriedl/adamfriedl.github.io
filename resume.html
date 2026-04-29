@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Friedl — Resume</title>
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #1a1a1a;
+        --accent-color: #2563eb;
+        --secondary-text: #666666;
+        --border-color: #e5e5e5;
+        --section-bg: #fafafa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--text-color);
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
+      }
+
+      .header .contact {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .header .contact a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .header .contact a:hover {
+        color: var(--accent-color);
+      }
+
+      .header .contact span {
+        color: var(--secondary-text);
+      }
+
+      /* Summary */
+      .summary {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        padding: 1.25rem;
+        background: var(--section-bg);
+        border-left: 3px solid var(--accent-color);
+      }
+
+      /* Section headers */
+      h2 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1.5px solid var(--text-color);
+        color: var(--text-color);
+      }
+
+      /* Skills */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 0.75rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .skill-category {
+        font-size: 0.9rem;
+      }
+
+      .skill-category strong {
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      .skill-category span {
+        color: var(--secondary-text);
+      }
+
+      /* Experience */
+      .job {
+        margin-bottom: 1.5rem;
+      }
+
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .job-title {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .job-date {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        font-style: italic;
+      }
+
+      .job-company {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        margin-bottom: 0.5rem;
+      }
+
+      .job ul {
+        padding-left: 1.25rem;
+        margin: 0;
+      }
+
+      .job li {
+        margin-bottom: 0.35rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Company grouping */
+      .company-block {
+        margin-bottom: 2rem;
+      }
+
+      .company-name {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--text-color);
+      }
+
+      .company-location {
+        font-weight: 400;
+        color: var(--secondary-text);
+        font-size: 0.9rem;
+      }
+
+      /* Education */
+      .education-item {
+        margin-bottom: 0.5rem;
+      }
+
+      .education-item strong {
+        font-weight: 600;
+      }
+
+      .education-item em {
+        color: var(--secondary-text);
+      }
+
+      /* Print button */
+      .actions {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border: 1.5px solid var(--text-color);
+        background: var(--bg-color);
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+      }
+
+      /* Back link */
+      .back-link {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .back-link:hover {
+        color: var(--accent-color);
+      }
+
+      /* Print styles */
+      @media print {
+        .actions,
+        .back-link {
+          display: none;
+        }
+        .container {
+          padding: 0;
+          max-width: none;
+        }
+        body {
+          font-size: 10pt;
+          line-height: 1.4;
+        }
+        .summary {
+          background: none;
+          border-left: 2px solid #333;
+          padding: 0.75rem;
+        }
+        h2 {
+          margin-top: 1.2rem;
+          margin-bottom: 0.6rem;
+        }
+        .job {
+          margin-bottom: 1rem;
+        }
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .container {
+          padding: 1.5rem;
+        }
+        .header h1 {
+          font-size: 1.8rem;
+        }
+        .header .contact {
+          flex-direction: column;
+          gap: 0.3rem;
+        }
+        .header .contact span {
+          display: none;
+        }
+        .job-header {
+          flex-direction: column;
+        }
+        .actions {
+          position: static;
+          margin-bottom: 1rem;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="actions">
+      <a href="/" class="btn">← Home</a>
+      <button class="btn" onclick="window.print()">Print / PDF</button>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>Adam Friedl</h1>
+        <div class="contact">
+          <a href="mailto:ajfriedl@gmail.com">ajfriedl@gmail.com</a>
+          <span>|</span>
+          <span>Portland, OR</span>
+          <span>|</span>
+          <a href="https://linkedin.com/in/adamfriedl">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="summary">
+        Engineering leader and former lawyer with deep technical expertise and extensive
+        experience building and directing complex programs across legal and nonprofit sectors,
+        including consulting to government agencies on joint initiatives. Eight years of progressive
+        engineering — most recently leading DevOps and platform initiatives — preceded by a decade
+        managing multidisciplinary teams, court operations, and technology projects serving tens of
+        thousands of vulnerable clients. Proven ability to conceptualize systems, earn trust across
+        disciplines, and deliver results in high-stakes environments.
+      </div>
+
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <strong>Languages:</strong>
+          <span>Go, Python, JavaScript, TypeScript, PHP, Ruby, SQL, YAML</span>
+        </div>
+        <div class="skill-category">
+          <strong>Platforms & Infrastructure:</strong>
+          <span>Kubernetes (GKE), Docker, GCP, Linux, CI/CD (CircleCI, Jenkins)</span>
+        </div>
+        <div class="skill-category">
+          <strong>Tools & Frameworks:</strong>
+          <span>Kong, HashiCorp Vault, Keycloak, Postgres, Prometheus, Grafana, Pub/Sub, SonarQube, React, React Native, Node, Gin, Rails, Tailwind</span>
+        </div>
+        <div class="skill-category">
+          <strong>Practices:</strong>
+          <span>Infrastructure as code, blue-green deployments, AI-assisted development, Agile</span>
+        </div>
+      </div>
+
+      <h2>Experience</h2>
+
+      <div class="company-block">
+        <div class="company-name">
+          Rakuten Advertising
+          <span class="company-location">— New York, NY & Remote</span>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Senior DevOps Engineer</span>
+            <span class="job-date">January 2026 – Present</span>
+          </div>
+          <ul>
+            <li>
+              Migrated 10 production services from VMs to GKE, eliminating environments where 97%
+              of CPU and 83% of memory sat unused
+            </li>
+            <li>
+              Architected ephemeral Kubernetes deployments with unique URLs per feature branch,
+              eliminating environment conflicts and enabling direct QA testing
+            </li>
+            <li>
+              Built and overhauled ~20 CI/CD pipelines, improving deployment cycle time by 30% and
+              enabling continuous delivery with less risk
+            </li>
+            <li>
+              Implemented automated test gates, linting, and vetting steps that contributed to a 16%
+              reduction in bugs filed
+            </li>
+            <li>
+              Designed blue-green deployment strategy that eliminates downtime previously occurring
+              with every production deploy
+            </li>
+            <li>
+              Built an AI-powered chat agent integrated with Prometheus and Grafana, used by ~10
+              engineers; reduced time to surface monitoring insights from minutes or hours to seconds
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Lead Software Engineer</span>
+            <span class="job-date">April 2023 – December 2025</span>
+          </div>
+          <ul>
+            <li>
+              Served as technical lead for a squad of 4–7 engineers on ~12 customer-facing and
+              backend services across Go, React, TypeScript, and PHP; managed auth via
+              Keycloak/OIDC, secrets via HashiCorp Vault, and traffic via Kong API gateways
+            </li>
+            <li>
+              Reduced ticket resolution time by 50% in the first year as lead through process
+              improvements and clearer technical direction
+            </li>
+            <li>
+              Served as technical lead for a new cross-team product targeting creators and
+              influencers; reviewed designs, scoped implementation, and authored requirements
+            </li>
+            <li>
+              Initiated migration of production services from VMs to Kubernetes (GKE), which became
+              the foundation of the company's broader platform modernization
+            </li>
+            <li>
+              Built and shipped a React Native mobile app to the App Store and Google Play Store,
+              solving novel auth and account-switching challenges in a company with limited mobile
+              experience
+            </li>
+            <li>
+              Mentored two summer interns on the mobile project, teaching React Native from scratch
+              while delivering production code
+            </li>
+            <li>
+              Championed AI adoption across the engineering organization, mentoring colleagues on
+              AI-assisted development tools and workflows
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Senior Software Engineer</span>
+            <span class="job-date">April 2022 – March 2023</span>
+          </div>
+          <ul>
+            <li>
+              Decomposed a PHP monolith into 5+ distributed services, improving maintainability
+              and deployment independence
+            </li>
+            <li>
+              Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB
+            </li>
+            <li>
+              Collaborated with cross-functional teams to define technical requirements and
+              architecture for new platform capabilities
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Software Engineer</span>
+            <span class="job-date">April 2019 – March 2022</span>
+          </div>
+          <ul>
+            <li>
+              Designed and implemented Pub/Sub messaging architecture for high-throughput APIs in
+              Go and PHP
+            </li>
+            <li>
+              Introduced CI/CD pipelines to a team that had not previously used them; built
+              automated build, test, and deployment workflows from scratch
+            </li>
+            <li>
+              Developed and maintained production APIs and backend jobs with monitoring, alerting,
+              and testing
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Junior Software Engineer</span>
+            <span class="job-date">April 2018 – March 2019</span>
+          </div>
+          <ul>
+            <li>Executed a complete CSS overhaul of a primary customer-facing dashboard</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-block">
+        <div class="company-name">
+          Center for Justice Innovation
+          <span class="company-location">— New York, NY</span>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Senior Advisor, Research-Practice Strategies</span>
+            <span class="job-date">July 2017 – April 2018</span>
+          </div>
+          <ul>
+            <li>
+              Consulted jurisdictions nationwide (St. Louis County, Charleston, SC, and others) on
+              justice reform strategies as part of the MacArthur Foundation's Safety and Justice
+              Challenge
+            </li>
+            <li>
+              Advised on technology's role in reducing jail populations, combating unjust fines and
+              fees, and implementing alternatives to incarceration
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Deputy Director, Midtown Community Court</span>
+            <span class="job-date">January 2015 – July 2017</span>
+          </div>
+          <ul>
+            <li>
+              Directed operations of the nation's first community court with a $2.3 million annual
+              budget
+            </li>
+            <li>
+              Supervised a 15-person multidisciplinary team of social workers, clinicians,
+              researchers, and intake staff
+            </li>
+            <li>
+              Designed and oversaw alternative-to-incarceration programs for thousands of cases
+              annually
+            </li>
+            <li>
+              Managed operations that saved taxpayers over $1,000,000 annually while reducing jail
+              intake at Rikers Island
+            </li>
+            <li>
+              Served as primary liaison between judges, prosecutors, defense attorneys, and legal
+              aid organizations, building consensus around innovative approaches
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-block">
+        <div class="company-name">
+          Pro Bono Net (now Scale Justice)
+          <span class="company-location">— New York, NY</span>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Program and Special Initiatives Manager</span>
+            <span class="job-date">April 2014 – January 2015</span>
+          </div>
+          <ul>
+            <li>
+              Managed technology projects serving more than 80,000 users at a nonprofit expanding
+              access to justice
+            </li>
+            <li>
+              Led development of the FEMA Appeals generator, a document assembly tool created for
+              Superstorm Sandy response and used by disaster victims nationwide
+            </li>
+            <li>
+              Cultivated partnerships with AmLaw 100 firms, major nonprofits, and government
+              agencies
+            </li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Pro Bono Coordinator</span>
+            <span class="job-date">September 2012 – March 2014</span>
+          </div>
+          <ul>
+            <li>
+              Coordinated city- and statewide volunteer attorney programs and pro bono legal
+              services
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-block">
+        <div class="company-name">
+          New York Appleseed
+          <span class="company-location">— New York, NY</span>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Coordinating Attorney, Volunteer Lawyers Project</span>
+            <span class="job-date">October 2009 – March 2011</span>
+          </div>
+          <ul>
+            <li>
+              Designed and supervised a legal representation program that served over 20,000
+              defendants in consumer debt cases
+            </li>
+            <li>
+              Pioneered a limited-scope engagement model, training hundreds of volunteer lawyers and
+              law students across multiple court locations
+            </li>
+            <li>
+              Collaborated with senior leadership of the New York State Access to Justice program
+              to expand and institutionalize the model
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-block">
+        <div class="company-name">
+          The Family Center
+          <span class="company-location">— New York, NY</span>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <span class="job-title">Staff Attorney</span>
+            <span class="job-date">May 2007 – October 2009</span>
+          </div>
+          <ul>
+            <li>
+              Provided legal representation to families facing terminal illness in housing,
+              benefits, custody, and guardianship proceedings
+            </li>
+            <li>
+              Conducted "know your rights" clinics and delivered compassionate counsel during
+              critical family transitions
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Education</h2>
+      <div class="education-item">
+        <strong>Flatiron School</strong> — Full-Stack Web Developer Program <em>2016 – 2017</em>
+      </div>
+      <div class="education-item">
+        <strong>Benjamin N. Cardozo School of Law, Yeshiva University</strong> — J.D., cum laude
+        <em>2006</em>
+      </div>
+      <div class="education-item">
+        <strong>University of Tulsa</strong> — B.A., summa cum laude, Spanish; Minors: French,
+        Political Science <em>1999</em>
+      </div>
+    </div>
+  </body>
+</html>
