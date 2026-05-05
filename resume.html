@@ -313,13 +313,16 @@
       </div>
 
       <div class="summary">
-        Engineering leader and former lawyer with deep technical expertise and extensive
-        experience building and directing complex programs across legal and nonprofit sectors,
-        including consulting to government agencies on joint initiatives. Eight years of progressive
-        engineering — most recently leading DevOps and platform initiatives — preceded by a decade
-        managing multidisciplinary teams, court operations, and technology projects serving tens of
-        thousands of vulnerable clients. Proven ability to conceptualize systems, earn trust across
-        disciplines, and deliver results in high-stakes environments.
+        Engineering leader with 8 years of progressive experience — from junior engineer to Senior
+        DevOps Engineer — designing, building, and operating scalable infrastructure and platforms.
+        Deep expertise in Kubernetes (GKE), CI/CD, cloud architecture, and AI-augmented tooling.
+        Recently migrated 10 production services to Kubernetes, built an AI-powered monitoring agent
+        from scratch, and architected blue-green deployment strategies to eliminate production
+        deployment downtime. Preceded by a decade managing multidisciplinary teams and complex
+        programs across legal, nonprofit, and government sectors, including deploying technology
+        serving tens of thousands. Brings uncommon cross-functional judgment and stakeholder
+        communication skills to technical leadership. The through-line: I like figuring out how
+        complex systems work and making them better and simpler for the people who depend on them.
       </div>
 
       <h2>Technical Skills</h2>
@@ -330,15 +333,20 @@
         </div>
         <div class="skill-category">
           <strong>Platforms & Infrastructure:</strong>
-          <span>Kubernetes (GKE), Docker, GCP, Linux, CI/CD (CircleCI, Jenkins)</span>
+          <span>Kubernetes (GKE), Docker, GCP, Linux, CI/CD, Google Agent Platform</span>
         </div>
         <div class="skill-category">
           <strong>Tools & Frameworks:</strong>
-          <span>Kong, HashiCorp Vault, Keycloak, Postgres, Prometheus, Grafana, Pub/Sub, SonarQube, React, React Native, Node, Gin, Rails, Tailwind</span>
+          <span
+            >Helm, Kong, HashiCorp Vault, Keycloak, Postgres, Prometheus, Grafana, Pub/Sub,
+            SonarQube, React, React Native, Node, Gin, Rails, Tailwind</span
+          >
         </div>
         <div class="skill-category">
           <strong>Practices:</strong>
-          <span>Infrastructure as code, blue-green deployments, AI-assisted development, Agile</span>
+          <span
+            >Infrastructure as code, blue-green deployments, AI-assisted development, Agile</span
+          >
         </div>
       </div>
 
@@ -357,28 +365,25 @@
           </div>
           <ul>
             <li>
-              Migrated 10 production services from VMs to GKE, eliminating environments where 97%
-              of CPU and 83% of memory sat unused
+              Standardized Kubernetes deployment strategy by moving services from bespoke Helm
+              charts to a unified, reusable chart, reducing configuration drift and onboarding time
+              for new services
             </li>
             <li>
-              Architected ephemeral Kubernetes deployments with unique URLs per feature branch,
-              eliminating environment conflicts and enabling direct QA testing
+              Designed blue-green deployment strategy using Kubernetes httproute weights to simplify
+              and streamline production deploys
             </li>
             <li>
-              Built and overhauled ~20 CI/CD pipelines, improving deployment cycle time by 30% and
-              enabling continuous delivery with less risk
+              Built CI/CD pipelines delivering isolated, ephemeral Kubernetes environments per
+              feature branch, enabling parallel QA testing with zero conflicts
             </li>
             <li>
-              Implemented automated test gates, linting, and vetting steps that contributed to a 16%
-              reduction in bugs filed
+              Designed and implemented GKE backup/restore architecture for Target Platform clusters
+              from scratch; authored TechOps runbooks used by the wider team
             </li>
             <li>
-              Designed blue-green deployment strategy that eliminates downtime previously occurring
-              with every production deploy
-            </li>
-            <li>
-              Built an AI-powered chat agent integrated with Prometheus and Grafana, used by ~10
-              engineers; reduced time to surface monitoring insights from minutes or hours to seconds
+              Built an AI-powered chat agent from scratch, integrated with Prometheus and Grafana,
+              enabling natural language monitoring queries for engineers without PromQL expertise
             </li>
           </ul>
         </div>
@@ -390,6 +395,14 @@
           </div>
           <ul>
             <li>
+              Migrated numerous production services from VMs to GKE, eliminating environments where
+              &gt; 90% of CPU and &gt; 80% of memory sat unused
+            </li>
+            <li>
+              Built and overhauled CI/CD pipelines with automated test gates, linting, and vetting;
+              improved deployment cycle time by 30% and contributed to a 16% reduction in bugs filed
+            </li>
+            <li>
               Served as technical lead for a squad of 4–7 engineers on ~12 customer-facing and
               backend services across Go, React, TypeScript, and PHP; managed auth via
               Keycloak/OIDC, secrets via HashiCorp Vault, and traffic via Kong API gateways
@@ -399,21 +412,18 @@
               improvements and clearer technical direction
             </li>
             <li>
+              Served as technical lead for Campaigns MVP: defined 50+ Jira stories structuring the
+              team's backlog, then built the platform layer — Postgres, Kong/OIDC auth, GCP Cloud
+              Storage + CDN, Keycloak clients, and production HA configuration
+            </li>
+            <li>
               Served as technical lead for a new cross-team product targeting creators and
               influencers; reviewed designs, scoped implementation, and authored requirements
             </li>
             <li>
-              Initiated migration of production services from VMs to Kubernetes (GKE), which became
-              the foundation of the company's broader platform modernization
-            </li>
-            <li>
-              Built and shipped a React Native mobile app to the App Store and Google Play Store,
-              solving novel auth and account-switching challenges in a company with limited mobile
-              experience
-            </li>
-            <li>
-              Mentored two summer interns on the mobile project, teaching React Native from scratch
-              while delivering production code
+              Mentored two summer interns on a mobile project, teaching React Native and Go from
+              scratch while delivering production code deployed to the App Store and Google Play
+              Store
             </li>
             <li>
               Championed AI adoption across the engineering organization, mentoring colleagues on
@@ -429,12 +439,10 @@
           </div>
           <ul>
             <li>
-              Decomposed a PHP monolith into 5+ distributed services, improving maintainability
-              and deployment independence
+              Decomposed a PHP monolith into 5+ distributed services, improving maintainability and
+              deployment independence
             </li>
-            <li>
-              Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB
-            </li>
+            <li>Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB</li>
             <li>
               Collaborated with cross-functional teams to define technical requirements and
               architecture for new platform capabilities
@@ -449,8 +457,8 @@
           </div>
           <ul>
             <li>
-              Designed and implemented Pub/Sub messaging architecture for high-throughput APIs in
-              Go and PHP
+              Designed and implemented Pub/Sub messaging architecture for high-throughput APIs in Go
+              and PHP
             </li>
             <li>
               Introduced CI/CD pipelines to a team that had not previously used them; built
@@ -469,7 +477,10 @@
             <span class="job-date">April 2018 – March 2019</span>
           </div>
           <ul>
-            <li>Executed a complete CSS overhaul of a primary customer-facing dashboard</li>
+            <li>
+              Executed a complete CSS overhaul of a primary customer-facing dashboard, improving
+              usability and visual consistency
+            </li>
           </ul>
         </div>
       </div>
@@ -590,8 +601,8 @@
               law students across multiple court locations
             </li>
             <li>
-              Collaborated with senior leadership of the New York State Access to Justice program
-              to expand and institutionalize the model
+              Collaborated with senior leadership of the New York State Access to Justice program to
+              expand and institutionalize the model
             </li>
           </ul>
         </div>
