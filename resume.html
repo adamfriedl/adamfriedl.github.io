@@ -38,7 +38,7 @@
       /* Header */
       .header {
         text-align: center;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.25rem;
         padding-bottom: 1.5rem;
         border-bottom: 2px solid var(--text-color);
       }
@@ -73,14 +73,46 @@
         color: var(--secondary-text);
       }
 
+      /* Tagline */
+      .tagline {
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.01em;
+      }
+
       /* Summary */
       .summary {
         font-size: 1.05rem;
         line-height: 1.7;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         padding: 1.25rem;
         background: var(--section-bg);
         border-left: 3px solid var(--accent-color);
+      }
+
+      /* How I work */
+      .how-i-work {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        padding: 0.85rem 1.25rem;
+        border-left: 2px solid var(--border-color);
+        color: var(--text-color);
+        font-style: italic;
+      }
+
+      .how-i-work-label {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--secondary-text);
+        margin-right: 0.5rem;
+        font-style: normal;
       }
 
       /* Section headers */
@@ -96,24 +128,34 @@
         color: var(--text-color);
       }
 
-      /* Skills */
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 0.75rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .skill-category {
-        font-size: 0.9rem;
-      }
-
-      .skill-category strong {
-        font-weight: 600;
+      h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
+        margin-bottom: 0.25rem;
         color: var(--text-color);
       }
 
-      .skill-category span {
+      .bridge {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        font-style: italic;
+        margin-bottom: 1rem;
+      }
+
+      /* Skills (tiered) */
+      .skill-tier {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+      }
+
+      .skill-tier strong {
+        font-weight: 700;
+        color: var(--text-color);
+      }
+
+      .skill-tier span {
         color: var(--secondary-text);
       }
 
@@ -312,42 +354,45 @@
         </div>
       </div>
 
+      <div class="tagline">
+        Senior DevOps Engineer · Kubernetes (GKE) · GCP · CI/CD · 8 years at Rakuten Advertising
+      </div>
+
       <div class="summary">
-        Engineering leader with 8 years of progressive experience — from junior engineer to Senior
-        DevOps Engineer — designing, building, and operating scalable infrastructure and platforms.
-        Deep expertise in Kubernetes (GKE), CI/CD, cloud architecture, and AI-augmented tooling.
-        Recently migrated 10 production services to Kubernetes, built an AI-powered monitoring agent
-        from scratch, and architected blue-green deployment strategies to eliminate production
-        deployment downtime. Preceded by a decade managing multidisciplinary teams and complex
-        programs across legal, nonprofit, and government sectors, including deploying technology
-        serving tens of thousands. Brings uncommon cross-functional judgment and stakeholder
-        communication skills to technical leadership. The through-line: I like figuring out how
-        complex systems work and making them better and simpler for the people who depend on them.
+        I've spent two careers doing the same thing: designing, building, and improving systems that
+        help people get to better outcomes. First in law and access-to-justice work — a decade
+        designing programs and tools that helped tens of thousands of people navigate courts,
+        benefits, disaster recovery, and consumer debt. Then in engineering — eight years at
+        Rakuten Advertising progressing from junior engineer to Senior DevOps, leading a squad of
+        4–7 on a dozen production services, migrating workloads to GKE, overhauling CI/CD across
+        the team, designing blue-green deployment to eliminate deploy downtime, and building an
+        AI-powered monitoring agent from scratch.
+      </div>
+
+      <div class="how-i-work">
+        <span class="how-i-work-label">How I work</span>I take ownership of the services I'm
+        responsible for and have an allergy to &ldquo;that's not my problem.&rdquo; I jump on the
+        messy work nobody's claimed, ramp up fast on unfamiliar systems, and bring people along
+        &mdash; setting technical direction and organizing cross-functional teams around clear
+        goals.
       </div>
 
       <h2>Technical Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <strong>Languages:</strong>
-          <span>Go, Python, JavaScript, TypeScript, PHP, Ruby, SQL, YAML</span>
-        </div>
-        <div class="skill-category">
-          <strong>Platforms & Infrastructure:</strong>
-          <span>Kubernetes (GKE), Docker, GCP, Linux, CI/CD, Google Agent Platform</span>
-        </div>
-        <div class="skill-category">
-          <strong>Tools & Frameworks:</strong>
-          <span
-            >Helm, Kong, HashiCorp Vault, Keycloak, Postgres, Prometheus, Grafana, Pub/Sub,
-            SonarQube, React, React Native, Node, Gin, Rails, Tailwind</span
-          >
-        </div>
-        <div class="skill-category">
-          <strong>Practices:</strong>
-          <span
-            >Infrastructure as code, blue-green deployments, AI-assisted development, Agile</span
-          >
-        </div>
+      <div class="skill-tier">
+        <strong>Deep:</strong>
+        <span>Kubernetes (GKE), Go, GCP, CI/CD, Docker, Postgres, Linux</span>
+      </div>
+      <div class="skill-tier">
+        <strong>Working knowledge:</strong>
+        <span
+          >Python, TypeScript, JavaScript, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus,
+          Grafana, Pub/Sub, Redis, React, Node, SQL, YAML, Terraform, Ansible, SonarQube, Wiz,
+          Chainguard</span
+        >
+      </div>
+      <div class="skill-tier">
+        <strong>Practices:</strong>
+        <span>Blue-green deployments, AI-assisted development, Agile</span>
       </div>
 
       <h2>Experience</h2>
@@ -365,28 +410,28 @@
           </div>
           <ul>
             <li>
-              Standardized Kubernetes deployment strategy by moving services from bespoke Helm
+              Noticed engineers were avoiding monitoring because PromQL was a barrier; designed,
+              built, and shipped an AI chat agent from scratch that turns plain-English questions
+              into Prometheus/Grafana queries — now used regularly by ~10 engineers across the team
+            </li>
+            <li>
+              Took on a backup/restore gap nobody had addressed for our GKE clusters: researched the
+              options, made the architectural call, configured the capability in GCP, and authored
+              the TechOps runbooks the rest of the team now uses
+            </li>
+            <li>
+              Designed a blue-green deployment strategy using Kubernetes HTTPRoute weights —
+              eliminated deploy-window downtime and replaced a fragile procedure with one engineers
+              can run with confidence
+            </li>
+            <li>
+              Standardized Kubernetes deployments by migrating production services from bespoke Helm
               charts to a unified, reusable chart, reducing configuration drift and onboarding time
               for new services
             </li>
             <li>
-              Designed blue-green deployment strategy using Kubernetes httproute weights to simplify
-              and streamline production deploys
-            </li>
-            <li>
               Built CI/CD pipelines delivering isolated, ephemeral Kubernetes environments per
               feature branch, enabling parallel QA testing with zero conflicts
-            </li>
-            <li>
-              Designed and implemented GKE backup/restore architecture for Target Platform clusters
-              from scratch; authored TechOps runbooks used by the wider team
-            </li>
-            <li>
-              Built an AI-powered chat agent from scratch, integrated with Prometheus and Grafana,
-              enabling natural language monitoring queries for engineers without PromQL expertise
-            </li>
-            <li>
-              Currently migrating production network infrastructure from F5 BIG-IP to F5 XC
             </li>
           </ul>
         </div>
@@ -398,35 +443,33 @@
           </div>
           <ul>
             <li>
-              Migrated numerous production services from VMs to GKE, eliminating environments where
-              &gt; 90% of CPU and &gt; 80% of memory sat unused
-            </li>
-            <li>
-              Built and overhauled CI/CD pipelines with automated test gates, linting, and vetting;
-              improved deployment cycle time by 30% and contributed to a 16% reduction in bugs filed
-            </li>
-            <li>
-              Served as technical lead for a squad of 4–7 engineers on ~12 customer-facing and
-              backend services across Go, React, TypeScript, and PHP; managed auth via
-              Keycloak/OIDC, secrets via HashiCorp Vault, and traffic via Kong API gateways
+              Technical lead for a squad of 4–7 engineers owning a dozen customer-facing and backend
+              services across Go, React, TypeScript, and PHP — set direction, unblocked the hard
+              problems, and owned the platform plumbing (auth via Keycloak/OIDC, secrets in Vault,
+              traffic via Kong)
             </li>
             <li>
               Reduced ticket resolution time by 50% in the first year as lead through process
               improvements and clearer technical direction
             </li>
             <li>
-              Served as technical lead for Campaigns MVP: defined 50+ Jira stories structuring the
-              team's backlog, then built the platform layer — Postgres, Kong/OIDC auth, GCP Cloud
-              Storage + CDN, Keycloak clients, and production HA configuration
+              Migrated ~10 production services from VMs to GKE — owned each migration end-to-end,
+              eliminating waste where &gt;90% of CPU and &gt;80% of memory had been sitting unused
             </li>
             <li>
-              Served as technical lead for a new cross-team product targeting creators and
-              influencers; reviewed designs, scoped implementation, and authored requirements
+              Took CI/CD from inconsistent to standardized across the team — built and overhauled
+              ~15 pipelines with automated test, lint, vet, quality (SonarQube), and security (Wiz)
+              gates — yielding 30% faster deploys and 16% fewer bugs
             </li>
             <li>
-              Mentored two summer interns on a mobile project, teaching React Native and Go from
-              scratch while delivering production code deployed to the App Store and Google Play
-              Store
+              Technical lead for the Campaigns MVP: structured the team's backlog with 50+ Jira
+              stories, then built the platform layer from scratch — Postgres, Kong/OIDC auth, GCP
+              Cloud Storage + CDN, Keycloak clients, and production HA configuration
+            </li>
+            <li>
+              Mentored two summer interns on a real mobile project — teaching them React Native and
+              Go from a standing start, then shipping the code they wrote to the App Store and
+              Google Play
             </li>
             <li>
               Championed AI adoption across the engineering organization, mentoring colleagues on
@@ -637,15 +680,14 @@
 
       <h2>Education</h2>
       <div class="education-item">
-        <strong>Flatiron School</strong> — Full-Stack Web Developer Program <em>2016 – 2017</em>
+        <strong>Flatiron School</strong> — Full-Stack Web Developer Program
       </div>
       <div class="education-item">
         <strong>Benjamin N. Cardozo School of Law, Yeshiva University</strong> — J.D., cum laude
-        <em>2006</em>
       </div>
       <div class="education-item">
         <strong>University of Tulsa</strong> — B.A., summa cum laude, Spanish; Minors: French,
-        Political Science <em>1999</em>
+        Political Science
       </div>
     </div>
   </body>
