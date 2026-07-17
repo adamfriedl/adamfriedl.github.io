@@ -6,7 +6,7 @@
     <title>Adam Friedl — Resume</title>
     <meta
       name="description"
-      content="Resume of Adam Friedl — Senior DevOps Engineer. Kubernetes (GKE), GCP, CI/CD, AI-augmented engineering. Two careers building systems that help people get to better outcomes."
+      content="Resume of Adam Friedl — Senior DevOps Engineer. Kubernetes (GKE), GCP, CI/CD, AI agents, enterprise agent platform governance."
     />
 
     <meta property="og:type" content="profile" />
@@ -388,11 +388,12 @@
         I've spent two careers doing the same thing: designing, building, and improving systems that
         help people get to better outcomes. First in law and access-to-justice work — a decade
         designing programs and tools that helped tens of thousands of people navigate courts,
-        benefits, disaster recovery, and consumer debt. Then in engineering — eight years at
-        Rakuten Advertising progressing from junior engineer to Senior DevOps, leading a squad of
-        4–7 on a dozen production services, migrating production services from VMs to GKE, overhauling CI/CD across
-        the team, designing blue-green deployment to eliminate deploy downtime, and building an
-        AI-powered monitoring agent from scratch.
+        benefits, disaster recovery, and consumer debt. Then in engineering — eight years at Rakuten
+        Advertising progressing from junior engineer to Senior DevOps, leading a squad of 4–7 on a
+        dozen production services, migrating production services from VMs to GKE, overhauling CI/CD
+        across the team, designing blue-green deployment to eliminate deploy downtime, building an
+        AI-powered monitoring agent from scratch, and piloting enterprise AI agent governance on
+        GCP's Gemini Enterprise Agent Platform.
       </div>
 
       <div class="how-i-work">
@@ -413,12 +414,15 @@
         <span
           >Python, TypeScript, JavaScript, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus,
           Grafana, Pub/Sub, Redis, React, Node, SQL, YAML, Terraform, Ansible, SonarQube, Wiz,
-          Chainguard</span
+          Chainguard, Cloud Armor</span
         >
       </div>
       <div class="skill-tier">
         <strong>Practices:</strong>
-        <span>Blue-green deployments, AI-assisted development, Agile</span>
+        <span
+          >Blue-green deployments, AI-assisted development, enterprise AI agent governance,
+          Agile</span
+        >
       </div>
 
       <h2>Experience</h2>
@@ -435,6 +439,16 @@
             <span class="job-date">January 2026 – Present</span>
           </div>
           <ul>
+            <li>
+              Piloting enterprise AI agent governance on GCP's Gemini Enterprise Agent Platform —
+              standing up centralized Agent Gateways with Cloud Armor security policies at the edge
+              to route and protect agent traffic ahead of org-wide rollout
+            </li>
+            <li>
+              Configuring agent registries, content-filtering policies, and IAM patterns — including
+              requiring endpoints to be registered before agents can call them — establishing shared
+              guardrails for safe agent deployment at scale
+            </li>
             <li>
               Noticed engineers were avoiding monitoring because PromQL was a barrier; designed
               (including the UI), built, and shipped an AI chat agent from scratch that turns
