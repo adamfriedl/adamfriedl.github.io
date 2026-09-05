@@ -41,11 +41,12 @@
         font-family:
           'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', sans-serif;
         font-weight: 800;
-        font-size: clamp(3.75rem, 18vw, 11rem);
+        font-size: clamp(2.75rem, calc((100vw - 2 * var(--gutter)) / 4.3), 11rem);
         line-height: 0.86;
         letter-spacing: 0.02em;
         text-transform: uppercase;
         color: var(--paper);
+        max-width: 100%;
       }
 
       .name span {
@@ -93,10 +94,6 @@
       }
 
       @media (max-width: 480px) {
-        .name {
-          font-size: clamp(3.25rem, 22vw, 5.5rem);
-        }
-
         .bio,
         .links {
           font-size: 1rem;
