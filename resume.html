@@ -431,13 +431,13 @@
           </div>
           <ul>
             <li>
-              Built Target Platform Buddy, the first production AI agent on our governed GCP agent platform: TechOps hands it an alert or incident, and it investigates across curated cluster docs, logs, and read-only Kubernetes access, then recommends a fix. It cannot change anything, by design — it runs under a least-privilege, read-only role behind Model Armor gateways. In use on real investigations (Python, Google ADK, Vertex/Gemini)
+              Built Target Platform Buddy, the first production AI agent on our governed GCP agent platform: TechOps hands it an alert or incident, and it investigates across curated cluster docs, logs, and read-only Kubernetes access, then recommends a fix. It cannot change anything, by design — it runs under a least-privilege, read-only role behind Model Armor gateways (Python, Google ADK, Vertex/Gemini)
             </li>
             <li>
-              Designed (including the UI), built, and shipped an AI chat agent that turns plain-English questions into Prometheus/Grafana queries — finding a number went from minutes, sometimes hours, of writing queries by hand to seconds. In use by the TechOps team
+              Designed (including the UI), built, and shipped an AI chat agent that turns plain-English questions into Prometheus/Grafana queries — finding a number went from minutes, sometimes hours, of writing queries by hand to seconds
             </li>
             <li>
-              Designed and built a blue-green deployment strategy using Kubernetes HTTPRoute weights, to take deploy-window downtime to zero and replace a fragile rollback procedure; production rollout was just beginning
+              Designed and built a blue-green deployment strategy using Kubernetes HTTPRoute weights, to take deploy-window downtime to zero and replace a fragile rollback procedure
             </li>
             <li>
               Moved production services off one-off Helm charts onto a single shared chart — including all 17 monitoring exporters in one sprint — reducing configuration drift and the time to onboard a new service
