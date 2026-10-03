@@ -381,19 +381,18 @@
       </div>
 
       <div class="tagline">
-        Senior DevOps Engineer · Building systems that help people get to better outcomes
+        Software &amp; Platform Engineer · Building systems that help people get something they need
       </div>
 
       <div class="summary">
-        I've spent two careers doing the same thing: designing, building, and improving systems that
-        help people get to better outcomes. First in law and access-to-justice work — a decade
-        designing programs and tools that helped tens of thousands of people navigate courts,
-        benefits, disaster recovery, and consumer debt. Then in engineering — eight years at Rakuten
-        Advertising progressing from junior engineer to Senior DevOps, leading a squad of 4–7 on a
-        dozen production services, migrating production services from VMs to GKE, overhauling CI/CD
-        across the team, designing blue-green deployment to eliminate deploy downtime, building an
-        AI-powered monitoring agent from scratch, and piloting enterprise AI agent governance on
-        GCP's Gemini Enterprise Agent Platform.
+        Two careers: a decade-plus in law and access to justice — representing people who couldn't
+        afford lawyers, designing court and pro bono programs, and building tools that served tens of
+        thousands of people navigating courts, benefits, disaster recovery, and consumer debt — then
+        nearly a decade in software and platform engineering at Rakuten Advertising, from junior
+        engineer to technical lead to Senior DevOps. Led a squad of 4–7 on a dozen production
+        services, moved services from VMs to GKE, rebuilt CI/CD around small incremental deploys, and
+        built two production AI agents for the platform team, including a read-only GKE
+        incident-investigation agent.
       </div>
 
       <div class="how-i-work">
@@ -405,23 +404,16 @@
 
       <h2>Technical Skills</h2>
       <div class="skill-tier">
-        <strong>Deep:</strong>
-        <span>Kubernetes (GKE), Go, GCP, CI/CD, Docker, Postgres, Linux</span>
-      </div>
-      <div class="skill-tier">
-        <strong>Working knowledge:</strong>
+        <strong>Production experience:</strong>
         <span
-          >Python, TypeScript, JavaScript, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus,
-          Grafana, Pub/Sub, Redis, React, Node, SQL, YAML, Terraform, Ansible, SonarQube, Wiz,
-          Chainguard, Cloud Armor</span
+          >Kubernetes (GKE), Go, GCP, CI/CD, Docker, Postgres, Linux, React, TypeScript, JavaScript,
+          Node, Python, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus, Grafana, Pub/Sub,
+          Redis, SQL, YAML, Terraform, Ansible, SonarQube, Wiz, Chainguard</span
         >
       </div>
       <div class="skill-tier">
         <strong>Practices:</strong>
-        <span
-          >Blue-green deployments, AI-assisted development, enterprise AI agent governance,
-          Agile</span
-        >
+        <span>Blue-green deployments, AI-assisted development, Agile</span>
       </div>
 
       <h2>Experience</h2>
@@ -429,49 +421,29 @@
       <div class="company-block">
         <div class="company-name">
           Rakuten Advertising
-          <span class="company-location">— New York, NY & Remote</span>
+          <span class="company-location">— New York, NY &amp; Remote</span>
         </div>
 
         <div class="job">
           <div class="job-header">
             <span class="job-title">Senior DevOps Engineer</span>
-            <span class="job-date">January 2026 – Present</span>
+            <span class="job-date">January 2026 – September 2026</span>
           </div>
           <ul>
             <li>
-              Piloting enterprise AI agent governance on GCP's Gemini Enterprise Agent Platform —
-              standing up centralized Agent Gateways with Cloud Armor security policies at the edge
-              to route and protect agent traffic ahead of org-wide rollout
+              Built Target Platform Buddy, the first production AI agent on our governed GCP agent platform: TechOps hands it an alert or incident, and it investigates across curated cluster docs, logs, and read-only Kubernetes access, then recommends a fix. It cannot change anything, by design — it runs under a least-privilege, read-only role behind Model Armor gateways (Python, Google ADK, Vertex/Gemini)
             </li>
             <li>
-              Configuring agent registries, content-filtering policies, and IAM patterns — including
-              requiring endpoints to be registered before agents can call them — establishing shared
-              guardrails for safe agent deployment at scale
+              Designed (including the UI), built, and shipped an AI chat agent that turns plain-English questions into Prometheus/Grafana queries — finding a number went from minutes, sometimes hours, of writing queries by hand to seconds
             </li>
             <li>
-              Noticed engineers were avoiding monitoring because PromQL was a barrier; designed
-              (including the UI), built, and shipped an AI chat agent from scratch that turns
-              plain-English questions into Prometheus/Grafana queries — now used regularly by ~10
-              engineers across the team
+              Designed and built a blue-green deployment strategy using Kubernetes HTTPRoute weights, to take deploy-window downtime to zero and replace a fragile rollback procedure
             </li>
             <li>
-              Took on a backup/restore gap nobody had addressed for our GKE clusters: researched the
-              options, made the architectural call, configured the capability in GCP, and authored
-              the TechOps runbooks the rest of the team now uses
+              Moved production services off one-off Helm charts onto a single shared chart — including all 17 monitoring exporters in one sprint — reducing configuration drift and the time to onboard a new service
             </li>
             <li>
-              Designed a blue-green deployment strategy using Kubernetes HTTPRoute weights —
-              eliminated deploy-window downtime and replaced a fragile procedure with one engineers
-              can run with confidence
-            </li>
-            <li>
-              Standardized Kubernetes deployments by migrating production services from bespoke Helm
-              charts to a unified, reusable chart, reducing configuration drift and onboarding time
-              for new services
-            </li>
-            <li>
-              Built CI/CD pipelines delivering isolated, ephemeral Kubernetes environments per
-              feature branch, enabling parallel QA testing with zero conflicts
+              Gave every feature branch its own short-lived Kubernetes environment and URL, so QA tests changes in parallel instead of deploying over each other on shared environments
             </li>
           </ul>
         </div>
@@ -483,38 +455,25 @@
           </div>
           <ul>
             <li>
-              Technical lead for a squad of 4–7 engineers owning a dozen customer-facing and backend
-              services across Go, React, TypeScript, and PHP — set direction, unblocked the hard
-              problems, and integrated those services across auth layers, OIDC, and secrets
-              management
+              Led a squad of 4–7 engineers owning a dozen customer-facing and backend services in Go, React, TypeScript, and PHP; cut ticket resolution time by 50% in the first year through process changes and clearer technical direction
             </li>
             <li>
-              Reduced ticket resolution time by 50% in the first year as lead through process
-              improvements and clearer technical direction
+              Technical lead for Campaigns, a new product with no platform to build on: sequenced the work into 50+ stories, then built the foundation — Postgres, file storage and CDN, production high availability, and auth configured on shared Kong/Keycloak — so the rest of the team could build features on it. Shipped in phases, Q4 2025–Q1 2026
             </li>
             <li>
-              Migrated ~10 production services from VMs to GKE — owned each migration end-to-end,
-              eliminating waste where &gt;90% of CPU and &gt;80% of memory had been sitting unused
+              Replaced big, batched releases with small incremental deploys: built and overhauled ~15 pipelines with automated test, lint, vet, quality (SonarQube), and security (Wiz) gates — 30% faster deploy cycle and 16% fewer bugs filed
             </li>
             <li>
-              Took CI/CD from inconsistent to standardized across the team — built and overhauled
-              ~15 pipelines with automated test, lint, vet, quality (SonarQube), and security (Wiz)
-              gates — yielding 30% faster deploys and 16% fewer bugs
+              Migrated ~10 production services from one-service-per-VM hosting to GKE, owning each migration end to end — on the VMs, more than 90% of CPU and 80% of memory had been sitting unused
             </li>
             <li>
-              Technical lead for the Campaigns MVP: structured the team's backlog with 50+ Jira
-              stories, then built the greenfield application platform — Postgres, GCP Cloud Storage
-              + CDN, production HA — configuring Kong/OIDC routes and Keycloak clients on shared
-              infrastructure
+              Mentored two summer interns from a standing start in React Native and Go to shipping a mobile app on the App Store and Google Play; guided them through a sign-in design that keeps users logged in for 90 days (PKCE, refresh tokens in encrypted device storage) and won agreement for it from the identity team, CISO, and Security Director
             </li>
             <li>
-              Mentored two summer interns on a real mobile project — teaching them React Native and
-              Go from a standing start, then shipping the code they wrote to the App Store and
-              Google Play
+              Shaped the squad's patterns for authentication and secrets (Kong/OIDC, Keycloak, Vault) and shepherded their rollout across those dozen services
             </li>
             <li>
-              Championed AI adoption across the engineering organization, mentoring colleagues on
-              AI-assisted development tools and workflows
+              Championed AI adoption across the engineering organization, mentoring colleagues on AI-assisted development tools and workflows
             </li>
           </ul>
         </div>
@@ -526,13 +485,13 @@
           </div>
           <ul>
             <li>
-              Decomposed a PHP monolith into 5+ distributed services, improving maintainability and
-              deployment independence
+              Owned the Publisher Payments product area end to end — Go API and React UI — from 2022 through 2026
             </li>
-            <li>Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB</li>
             <li>
-              Collaborated with cross-functional teams to define technical requirements and
-              architecture for new platform capabilities
+              Decomposed a PHP monolith into 5+ distributed services, improving maintainability and deployment independence
+            </li>
+            <li>
+              Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB
             </li>
           </ul>
         </div>
@@ -544,16 +503,16 @@
           </div>
           <ul>
             <li>
-              Designed and implemented Pub/Sub messaging architecture for high-throughput APIs in Go
-              and PHP
+              Primary maintainer of the customer-facing advertiser dashboard for six years; built React front ends for it, order details, and promotions management, along with the APIs behind them, and set up Cypress end-to-end testing across multiple repos
             </li>
             <li>
-              Introduced CI/CD pipelines to a team that had not previously used them; built
-              automated build, test, and deployment workflows from scratch
+              Built the Notifications API in 2020 (CI/CD, expiring-offers job, Pub/Sub publisher) and later carried it through two platform moves — VMs to GKE to new shared gateways — without a rewrite, while other teams depended on it
             </li>
             <li>
-              Developed and maintained production APIs and backend jobs with monitoring, alerting,
-              and testing
+              Designed and built the Pub/Sub event stream for affiliate relationship events: standardized the message schema across event types and isolated topics by environment
+            </li>
+            <li>
+              Introduced CI/CD pipelines to a team that had not previously used them; built automated build, test, and deployment workflows from scratch
             </li>
           </ul>
         </div>
@@ -565,8 +524,7 @@
           </div>
           <ul>
             <li>
-              Executed a complete CSS overhaul of a primary customer-facing dashboard, improving
-              usability and visual consistency
+              Executed a complete CSS overhaul of a primary customer-facing dashboard, improving usability and visual consistency
             </li>
           </ul>
         </div>
