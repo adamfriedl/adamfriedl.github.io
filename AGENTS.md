@@ -4,7 +4,7 @@ Repo-specific guidance for AI coding agents.
 
 ## What this repo is
 
-Personal homepage site (adamfriedl.net) — static content.
+Personal homepage site (adamfriedl.com) — static content.
 
 ## Stack conventions
 
