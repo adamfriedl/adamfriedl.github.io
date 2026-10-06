@@ -111,32 +111,10 @@
       .summary {
         font-size: 1.05rem;
         line-height: 1.7;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         padding: 1.25rem;
         background: var(--section-bg);
         border-left: 3px solid var(--accent-color);
-      }
-
-      /* How I work */
-      .how-i-work {
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin-bottom: 2rem;
-        padding: 0.85rem 1.25rem;
-        border-left: 2px solid var(--border-color);
-        color: var(--text-color);
-        font-style: italic;
-      }
-
-      .how-i-work-label {
-        display: inline-block;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--secondary-text);
-        margin-right: 0.5rem;
-        font-style: normal;
       }
 
       /* Section headers */
@@ -381,25 +359,17 @@
       </div>
 
       <div class="tagline">
-        Software &amp; Platform Engineer · Building systems that help people get something they need
+        Senior DevOps Engineer
       </div>
 
       <div class="summary">
-        Two careers: a decade-plus in law and access to justice — representing people who couldn't
-        afford lawyers, designing court and pro bono programs, and building tools that served tens of
-        thousands of people navigating courts, benefits, disaster recovery, and consumer debt — then
-        nearly a decade in software and platform engineering at Rakuten Advertising, from junior
-        engineer to technical lead to Senior DevOps. Led a squad of 4–7 on a dozen production
-        services, moved services from VMs to GKE, rebuilt CI/CD around small incremental deploys, and
-        built two production AI agents for the platform team, including a read-only GKE
-        incident-investigation agent.
-      </div>
-
-      <div class="how-i-work">
-        <span class="how-i-work-label">How I work</span>I own systems end to end &mdash; including
-        gaps that fall between teams. I learn unfamiliar systems quickly, stay honest about what
-        I'm still figuring out, and bring people along: setting technical direction and helping
-        cross-functional teams aim at shared goals.
+        I've spent two careers doing the same thing: designing, building, and improving systems that
+        help people get to better outcomes. First as a legal aid lawyer and nonprofit program leader,
+        designing programs and tools that served tens of thousands of people in courts, benefits,
+        disaster recovery, and consumer debt; then eight years at Rakuten Advertising, from junior
+        engineer to technical lead to Senior DevOps &mdash; moving ~10 production services onto GKE,
+        standardizing CI/CD, and building AI agents that answer monitoring questions and investigate
+        incidents for the operations team.
       </div>
 
       <h2>Technical Skills</h2>
@@ -408,12 +378,13 @@
         <span
           >Kubernetes (GKE), Go, GCP, CI/CD, Docker, Postgres, Linux, React, TypeScript, JavaScript,
           Node, Python, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus, Grafana, Pub/Sub,
-          Redis, SQL, YAML, Terraform, Ansible, SonarQube, Wiz, Chainguard</span
+          Redis, SQL, YAML, Terraform, Ansible, SonarQube, Wiz, Chainguard, Vertex AI / Gemini, Google ADK,
+          Model Armor</span
         >
       </div>
       <div class="skill-tier">
         <strong>Practices:</strong>
-        <span>Blue-green deployments, AI-assisted development, Agile</span>
+        <span>Blue-green deployments, AI-assisted development, enterprise AI agent governance, Agile</span>
       </div>
 
       <h2>Experience</h2>
@@ -469,12 +440,6 @@
             <li>
               Mentored two summer interns from a standing start in React Native and Go to shipping a mobile app on the App Store and Google Play; guided them through a sign-in design that keeps users logged in for 90 days (PKCE, refresh tokens in encrypted device storage) and won agreement for it from the identity team, CISO, and Security Director
             </li>
-            <li>
-              Shaped the squad's patterns for authentication and secrets (Kong/OIDC, Keycloak, Vault) and shepherded their rollout across those dozen services
-            </li>
-            <li>
-              Championed AI adoption across the engineering organization, mentoring colleagues on AI-assisted development tools and workflows
-            </li>
           </ul>
         </div>
 
@@ -485,13 +450,10 @@
           </div>
           <ul>
             <li>
-              Built and maintained Publisher Payments — Go API and React UI — one of the dozen production services my team owned; authored 160+ pull requests and reviewed 270+ from 2022 through 2026
+              Decomposed a PHP monolith into 5+ distributed services, giving customers a faster, more modern experience and developers a clearer, more flexible, and more resilient design
             </li>
             <li>
-              Decomposed a PHP monolith into 5+ distributed services, improving maintainability and deployment independence
-            </li>
-            <li>
-              Optimized Docker builds; reduced one production image from 1.15 GB to 30 MB
+              Unblocked the engineering org within a week when a Zscaler certificate change broke Docker builds across Go and Node services: found the root cause once, fixed 7+ repos in parallel, and documented the pattern for the next change
             </li>
           </ul>
         </div>
