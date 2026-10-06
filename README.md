@@ -2,4 +2,4 @@
 
 Thanks for stopping by.  
 
-[adamfriedl.net](https://adamfriedl.net)
+[adamfriedl.com](https://adamfriedl.com)
