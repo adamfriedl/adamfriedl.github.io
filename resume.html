@@ -6,7 +6,7 @@
     <title>Adam Friedl — Resume</title>
     <meta
       name="description"
-      content="Resume of Adam Friedl — Senior DevOps Engineer. Kubernetes (GKE), GCP, CI/CD, AI agents, enterprise agent platform governance."
+      content="Resume of Adam Friedl — Senior Engineer &amp; Former Legal Aid Lawyer. Production AI agents, Kubernetes (GKE), GCP, and a decade in legal services and access to justice."
     />
 
     <meta property="og:type" content="profile" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="Adam Friedl — Resume" />
     <meta
       property="og:description"
-      content="Senior DevOps Engineer · Building systems that help people get to better outcomes."
+      content="Senior Engineer &amp; Former Legal Aid Lawyer · Building systems that help people get to better outcomes."
     />
     <meta property="og:url" content="https://adamfriedl.com/resume.html" />
     <meta property="og:image" content="https://adamfriedl.com/favicon.ico" />
@@ -23,7 +23,7 @@
     <meta name="twitter:title" content="Adam Friedl — Resume" />
     <meta
       name="twitter:description"
-      content="Senior DevOps Engineer · Building systems that help people get to better outcomes."
+      content="Senior Engineer &amp; Former Legal Aid Lawyer · Building systems that help people get to better outcomes."
     />
     <meta name="twitter:image" content="https://adamfriedl.com/favicon.ico" />
 
@@ -359,32 +359,37 @@
       </div>
 
       <div class="tagline">
-        Senior DevOps Engineer
+        Senior Engineer &amp; Former Legal Aid Lawyer
       </div>
 
       <div class="summary">
-        I've spent two careers doing the same thing: designing, building, and improving systems that
-        help people get to better outcomes. First as a legal aid lawyer and nonprofit program leader,
-        designing programs and tools that served tens of thousands of people in courts, benefits,
-        disaster recovery, and consumer debt; then eight years at Rakuten Advertising, from junior
-        engineer to technical lead to Senior DevOps &mdash; moving ~10 production services onto GKE,
-        standardizing CI/CD, and building AI agents that answer monitoring questions and investigate
-        incidents for the operations team.
+        I've spent two careers designing, building, and improving systems that help people get to
+        better outcomes. The first was a decade in legal services and access to justice:
+        representing families in housing, benefits, and custody cases, designing a volunteer lawyer
+        program that served over 20,000 defendants in consumer debt court, and coordinating
+        development of Pro Bono Net's FEMA Appeals document assembly tool. The second was eight
+        years of engineering at Rakuten Advertising, from junior engineer to leading a squad, most
+        recently building two AI agents used in production, including one that investigates
+        incidents and recommends a fix it has no permission to apply.
       </div>
 
       <h2>Technical Skills</h2>
       <div class="skill-tier">
         <strong>Production experience:</strong>
         <span
-          >Kubernetes (GKE), Go, GCP, CI/CD, Docker, Postgres, Linux, React, TypeScript, JavaScript,
-          Node, Python, PHP, Helm, Kong, HashiCorp Vault, Keycloak, Prometheus, Grafana, Pub/Sub,
-          Redis, SQL, YAML, Terraform, Ansible, SonarQube, Wiz, Chainguard, Vertex AI / Gemini, Google ADK,
-          Model Armor</span
+          >Python, Go, Vertex AI / Gemini, Google ADK, Model Armor, Kubernetes (GKE), GCP, Workload
+          Identity (GKE), Kong, Keycloak, HashiCorp Vault, CI/CD, Docker, Postgres, React,
+          TypeScript, JavaScript, Node, PHP, Helm, Prometheus, Grafana, Pub/Sub, Redis, SQL, Linux,
+          Terraform, Ansible, SonarQube, Wiz, Chainguard</span
         >
       </div>
       <div class="skill-tier">
         <strong>Practices:</strong>
-        <span>Blue-green deployments, AI-assisted development, enterprise AI agent governance, Agile</span>
+        <span>AI-assisted development, enterprise AI agent governance, blue-green deployments, Agile</span>
+      </div>
+      <div class="skill-tier">
+        <strong>Languages:</strong>
+        <span>Spanish (fully proficient)</span>
       </div>
 
       <h2>Experience</h2>
@@ -410,12 +415,6 @@
             <li>
               Designed and built a blue-green deployment strategy using Kubernetes HTTPRoute weights, to take deploy-window downtime to zero and replace a fragile rollback procedure
             </li>
-            <li>
-              Moved production services off one-off Helm charts onto a single shared chart — including all 17 monitoring exporters in one sprint — reducing configuration drift and the time to onboard a new service
-            </li>
-            <li>
-              Gave every feature branch its own short-lived Kubernetes environment and URL, so QA tests changes in parallel instead of deploying over each other on shared environments
-            </li>
           </ul>
         </div>
 
@@ -426,19 +425,19 @@
           </div>
           <ul>
             <li>
-              Led a squad of 4–7 engineers owning a dozen customer-facing and backend services in Go, React, TypeScript, and PHP; cut ticket resolution time by 50% in the first year through process changes and clearer technical direction
+              Led a squad of 4 engineers owning a dozen customer-facing and backend services in Go, React, TypeScript, and PHP; cut ticket resolution time by 50% in the first year through process changes and clearer technical direction
             </li>
             <li>
-              Technical lead for Campaigns, a new product with no platform to build on: sequenced the work into 50+ stories, then built the foundation — Postgres, file storage and CDN, production high availability, and auth configured on shared Kong/Keycloak — so the rest of the team could build features on it. Shipped in phases, Q4 2025–Q1 2026
+              Shaped the squad's patterns for authentication and secrets (Kong/OIDC, Keycloak, Vault) and shepherded their rollout across those dozen services
             </li>
             <li>
-              Replaced big, batched releases with small incremental deploys: built and overhauled ~15 pipelines with automated test, lint, vet, quality (SonarQube), and security (Wiz) gates — 30% faster deploy cycle and 16% fewer bugs filed
+              Replaced big, batched releases with small incremental deploys: built and overhauled ~15 pipelines with automated test, quality, and security gates — 30% faster deploy cycle and 16% fewer bugs filed
             </li>
             <li>
-              Migrated ~10 production services from one-service-per-VM hosting to GKE, owning each migration end to end — on the VMs, more than 90% of CPU and 80% of memory had been sitting unused
+              Migrated ~10 production services from one-service-per-VM hosting to GKE, owning each migration end to end
             </li>
             <li>
-              Mentored two summer interns from a standing start in React Native and Go to shipping a mobile app on the App Store and Google Play; guided them through a sign-in design that keeps users logged in for 90 days (PKCE, refresh tokens in encrypted device storage) and won agreement for it from the identity team, CISO, and Security Director
+              Managed two full-time interns directly for about seven months, from a standing start in React Native and Go to a mobile app on the App Store and Google Play; guided them through a sign-in design (PKCE, refresh tokens in encrypted device storage) and won agreement for it from the identity team, CISO, and Security Director
             </li>
           </ul>
         </div>
@@ -452,9 +451,6 @@
             <li>
               Decomposed a PHP monolith into 5+ distributed services, giving customers a faster, more modern experience and developers a clearer, more flexible, and more resilient design
             </li>
-            <li>
-              Unblocked the engineering org within a week when a Zscaler certificate change broke Docker builds across Go and Node services: found the root cause once, fixed 7+ repos in parallel, and documented the pattern for the next change
-            </li>
           </ul>
         </div>
 
@@ -465,16 +461,7 @@
           </div>
           <ul>
             <li>
-              Primary maintainer of the customer-facing advertiser dashboard for six years; built React front ends for it, order details, and promotions management, along with the APIs behind them, and set up Cypress end-to-end testing across multiple repos
-            </li>
-            <li>
-              Built the Notifications API in 2020 (CI/CD, expiring-offers job, Pub/Sub publisher) and later carried it through two platform moves — VMs to GKE to new shared gateways — without a rewrite, while other teams depended on it
-            </li>
-            <li>
-              Designed and built the Pub/Sub event stream for affiliate relationship events: standardized the message schema across event types and isolated topics by environment
-            </li>
-            <li>
-              Introduced CI/CD pipelines to a team that had not previously used them; built automated build, test, and deployment workflows from scratch
+              Built React front ends and the APIs behind them for seven years on my team's customer-facing advertiser dashboard, a full-stack product made up of microservices handling millions of requests a day
             </li>
           </ul>
         </div>
@@ -505,9 +492,7 @@
           </div>
           <ul>
             <li>
-              Consulted jurisdictions nationwide (St. Louis County, Charleston, SC, and others) on
-              justice reform strategies as part of the MacArthur Foundation's Safety and Justice
-              Challenge
+              Provided technical assistance to about 10 jurisdictions — MacArthur Foundation Safety and Justice Challenge sites and state court systems — working to reduce jail populations and adopt new technology; translated the research team's findings into practice and policy
             </li>
           </ul>
         </div>
@@ -519,24 +504,10 @@
           </div>
           <ul>
             <li>
-              Directed programs for the nation's first community court with a $2.3 million annual
-              budget
+              Directed programs for the nation's first community court with a $2.3 million annual budget and a 15-person multidisciplinary team of social workers, clinicians, researchers, and intake staff
             </li>
             <li>
-              Supervised a 15-person multidisciplinary team of social workers, clinicians,
-              researchers, and intake staff
-            </li>
-            <li>
-              Designed and oversaw alternative-to-incarceration programs for thousands of cases
-              annually
-            </li>
-            <li>
-              Managed operations that saved taxpayers over $1,000,000 annually while reducing jail
-              intake at Rikers Island
-            </li>
-            <li>
-              Served as primary liaison between judges, prosecutors, defense attorneys, and legal
-              aid organizations, building consensus around innovative approaches
+              Served as primary liaison between judges, prosecutors, defense attorneys, and legal aid organizations, building consensus around innovative approaches
             </li>
           </ul>
         </div>
@@ -555,16 +526,10 @@
           </div>
           <ul>
             <li>
-              Managed technology projects serving more than 80,000 users at a nonprofit expanding
-              access to justice
+              Coordinated development of the FEMA Appeals generator, a document assembly tool created for Superstorm Sandy response and used by disaster victims nationwide
             </li>
             <li>
-              Coordinated development of the FEMA Appeals generator, a document assembly tool created for
-              Superstorm Sandy response and used by disaster victims nationwide
-            </li>
-            <li>
-              Cultivated partnerships with AmLaw 100 firms, major nonprofits, and government
-              agencies
+              Managed technology projects serving more than 80,000 users at a nonprofit expanding access to justice
             </li>
           </ul>
         </div>
@@ -576,8 +541,7 @@
           </div>
           <ul>
             <li>
-              Coordinated city- and statewide volunteer attorney programs and pro bono legal
-              services
+              Coordinated city- and statewide volunteer attorney programs; maintained and sourced online resources for pro bono lawyers handling benefits and other cases, working with dozens of legal services organizations nationwide
             </li>
           </ul>
         </div>
@@ -596,16 +560,13 @@
           </div>
           <ul>
             <li>
-              Designed and supervised a legal representation program that served over 20,000
-              defendants in consumer debt cases
+              Designed a volunteer lawyer program from scratch — how clients were found, how the court day ran, and the procedure training — that served over 20,000 defendants in consumer debt cases
             </li>
             <li>
-              Pioneered a limited-scope engagement model, training hundreds of volunteer lawyers and
-              law students across multiple court locations
+              Pioneered a limited-scope engagement model; trained hundreds of volunteer lawyers and law students across multiple court locations and supervised them in court
             </li>
             <li>
-              Collaborated with senior leadership of the New York State Access to Justice program to
-              expand and institutionalize the model
+              Ran the program in partnership with the New York State Access to Justice program, an arm of the state courts, working with its senior leadership to expand and institutionalize the model
             </li>
           </ul>
         </div>
@@ -624,12 +585,10 @@
           </div>
           <ul>
             <li>
-              Provided legal representation to families facing terminal illness in housing,
-              benefits, custody, and guardianship proceedings
+              Represented families facing terminal illness in housing, benefits, custody, and guardianship proceedings, including clients who spoke only Spanish
             </li>
             <li>
-              Conducted "know your rights" clinics and delivered compassionate counsel during
-              critical family transitions
+              Advocated for clients on public benefits, Social Security Disability, and public housing eligibility; conducted "know your rights" clinics
             </li>
           </ul>
         </div>
@@ -640,8 +599,7 @@
         <strong>Benjamin N. Cardozo School of Law, Yeshiva University</strong> — J.D., cum laude
       </div>
       <div class="education-item">
-        <strong>University of Tulsa</strong> — B.A., summa cum laude, Spanish; Minors: French,
-        Political Science
+        <strong>University of Tulsa</strong> — B.A., summa cum laude, Spanish
       </div>
     </div>
   </body>
