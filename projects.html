@@ -103,9 +103,10 @@
           dashboard. It runs once a day on its own.
         </p>
         <p>
-          It's modeled on Community Tech Alliance's Progressive Action Database (PAD). I built it to
-          learn PAD-style data platform architecture hands-on. I wanted to walk each layer myself
-          and work through observability, cost, and data quality on a real dataset.
+          It's modeled on Community Tech Alliance's Progressive Action Database (PAD), though it
+          isn't affiliated with CTA. I built it to learn PAD-style data platform architecture
+          hands-on. I wanted to walk each layer myself and work through observability, cost, and
+          data quality on a real dataset.
         </p>
         <ul>
           <li>
@@ -116,12 +117,12 @@
             Loads are incremental, picking up from the last date seen with a seven-day overlap, and
             dbt tests on the data fail the job, so a bad load trips the same alert as a crash.
           </li>
+          <li>
+            I learned the cost side of the choices: a managed Airflow environment costs hundreds a
+            month just sitting idle, so a scheduled serverless job taught me the same scheduling and
+            alerting patterns for a dollar or two.
+          </li>
         </ul>
-        <p>
-          It's a lab, not a production system: one person, a sample of about 10,000 contribution
-          records by default, and simple Python loaders standing in for the ingestion tooling a real
-          platform would use.
-        </p>
         <nav class="links">
           <a href="https://adamfriedl.com/pad-lab/">Live dashboard</a>
           <span class="sep" aria-hidden="true">·</span>
@@ -144,9 +145,7 @@
         <ul>
           <li>
             Before running any model, I checked the labels against the LIST code list and the Census
-            county file. That turned up 46 proposed corrections, nearly all county codes, and 21
-            rows where the dataset's two copies of the issue codes differ. I've shared these with
-            the Lab.
+            county file. That turned up proposed corrections, which I've shared with the Lab.
           </li>
           <li>
             The biggest lesson was that the prompt is part of what gets measured. Most of the
@@ -159,8 +158,8 @@
         <p>
           On the dataset's designed tests, the model flagged all 10 real emergencies and wasn't
           fooled by any of the 10 messages with crisis words in a non-urgent context, though my
-          narrower emergency definition made the second easier. It's a first-pass baseline (one
-          run, 180 synthetic messages), and the next run uses a prompt that follows the key's
+          narrower emergency definition made the second easier. It's a first-pass baseline (one run,
+          180 synthetic messages), and the next run uses a prompt that follows the key's
           conventions. The scripts were written with Claude Code, and I reviewed them and the
           scoring choices; a second, independently written scorer checked the figures.
         </p>
