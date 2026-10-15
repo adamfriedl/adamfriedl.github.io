@@ -157,10 +157,12 @@
           </li>
         </ul>
         <p>
-          The scores come from one untuned first-pass run of one model on 180 synthetic messages,
-          with no human comparison, so they say more about my prompt's choices than about the model.
-          The next step is a run with a prompt that follows the key's conventions. The scripts were
-          written with Claude Code, and I reviewed them and the scoring choices.
+          On the dataset's designed tests, the model flagged all 10 real emergencies and wasn't
+          fooled by any of the 10 messages with crisis words in a non-urgent context, though my
+          narrower emergency definition made the second easier. It's a first-pass baseline (one
+          run, 180 synthetic messages), and the next run uses a prompt that follows the key's
+          conventions. The scripts were written with Claude Code, and I reviewed them and the
+          scoring choices; a second, independently written scorer checked the figures.
         </p>
         <nav class="links">
           <a href="https://github.com/adamfriedl/intake-classification-eval"
