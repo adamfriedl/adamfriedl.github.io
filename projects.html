@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Friedl — Projects</title>
+    <meta
+      name="description"
+      content="Projects by Adam Friedl, software engineer and lawyer: a data platform lab on FEC data, a review of a legal intake classification dataset, and a personal GCP lab."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="adamfriedl.com" />
+    <meta property="og:title" content="Adam Friedl — Projects" />
+    <meta
+      property="og:description"
+      content="Things I've built to learn and out of curiosity."
+    />
+    <meta property="og:url" content="https://adamfriedl.com/projects.html" />
+    <meta property="og:image" content="https://adamfriedl.com/favicon.ico" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Adam Friedl — Projects" />
+    <meta
+      name="twitter:description"
+      content="Things I've built to learn and out of curiosity."
+    />
+    <meta name="twitter:image" content="https://adamfriedl.com/favicon.ico" />
+
+    <link rel="canonical" href="https://adamfriedl.com/projects.html" />
+    <style>
+      :root {
+        --bg-color: #ffffff;
+        --text-color: #1a1a1a;
+        --accent-color: #2563eb;
+        --secondary-text: #666666;
+        --border-color: #e5e5e5;
+        --section-bg: #fafafa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 3rem 2rem 4rem;
+      }
+
+      /* Header */
+      .header {
+        text-align: center;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--text-color);
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.5rem;
+      }
+
+      .header .contact {
+        font-size: 0.9rem;
+        color: var(--secondary-text);
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .header .contact a {
+        color: var(--secondary-text);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .header .contact a:hover {
+        color: var(--accent-color);
+      }
+
+      .header .contact span {
+        color: var(--secondary-text);
+      }
+
+      /* Tagline */
+      .tagline {
+        text-align: center;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.01em;
+      }
+
+      /* Intro */
+      .summary {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        padding: 1.25rem;
+        background: var(--section-bg);
+        border-left: 3px solid var(--accent-color);
+      }
+
+      /* Section headers */
+      h2 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.4rem;
+        border-bottom: 1.5px solid var(--text-color);
+        color: var(--text-color);
+      }
+
+      /* Projects */
+      .project {
+        margin-bottom: 1.5rem;
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin-bottom: 0.4rem;
+      }
+
+      .project-title {
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .project-date {
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+        font-style: italic;
+      }
+
+      .project p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 0.6rem;
+      }
+
+      .project ul {
+        padding-left: 1.25rem;
+        margin: 0 0 0.6rem;
+      }
+
+      .project li {
+        margin-bottom: 0.35rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .project-links {
+        font-size: 0.9rem;
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .project a {
+        color: var(--accent-color);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      .project a:hover {
+        text-decoration: underline;
+      }
+
+      /* Nav buttons */
+      .actions {
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        border: 1.5px solid var(--text-color);
+        background: var(--bg-color);
+        color: var(--text-color);
+        cursor: pointer;
+        transition: all 0.2s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn:hover {
+        background: var(--text-color);
+        color: var(--bg-color);
+      }
+
+      /* Print styles */
+      @media print {
+        .actions {
+          display: none;
+        }
+        .container {
+          padding: 0;
+          max-width: none;
+        }
+        body {
+          font-size: 10pt;
+          line-height: 1.4;
+        }
+        .summary {
+          background: none;
+          border-left: 2px solid #333;
+          padding: 0.75rem;
+        }
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+      }
+
+      /* Mobile */
+      @media (max-width: 600px) {
+        .container {
+          padding: 1.5rem;
+        }
+        .header h1 {
+          font-size: 1.8rem;
+        }
+        .header .contact {
+          flex-direction: column;
+          gap: 0.3rem;
+        }
+        .header .contact span {
+          display: none;
+        }
+        .project-header {
+          flex-direction: column;
+        }
+        .actions {
+          position: static;
+          margin-bottom: 1rem;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="actions">
+      <a href="/" class="btn">← Home</a>
+      <a href="/resume.html" class="btn">Resume</a>
+    </div>
+
+    <div class="container">
+      <div class="header">
+        <h1>Adam Friedl</h1>
+        <div class="contact">
+          <a href="mailto:me@adamfriedl.com">me@adamfriedl.com</a>
+          <span>|</span>
+          <a href="https://linkedin.com/in/adamfriedl">LinkedIn</a>
+          <span>|</span>
+          <a href="https://github.com/adamfriedl">GitHub</a>
+        </div>
+      </div>
+
+      <div class="tagline">Software Engineer &amp; Lawyer</div>
+
+      <div class="summary">
+        I like building things to understand how they work, and sometimes just because I'm
+        curious. Here are a few recent ones, with what they are and what they aren't.
+      </div>
+
+      <h2>Projects</h2>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">pad-lab</span>
+          <span class="project-date">July – September 2026</span>
+        </div>
+        <p>
+          A small data platform lab built on real Federal Election Commission campaign-finance
+          data. Python loaders pull from the FEC's public API into a Cloud Storage landing bucket,
+          then BigQuery, where dbt models clean the data and build the tables behind a small
+          public dashboard. It runs once a day on its own.
+        </p>
+        <p>
+          I built it to learn PAD-style data platform architecture hands-on. It's modeled on
+          Community Tech Alliance's PAD, though it isn't affiliated with CTA, and I wanted to walk
+          each layer myself and work through observability, cost, and data quality on a real
+          dataset.
+        </p>
+        <ul>
+          <li>
+            I wrote all the infrastructure in Terraform, including the scheduled job, the secret
+            for the API key, alerts for a failed run or stale data, and a billing budget.
+          </li>
+          <li>
+            Loads are incremental, picking up from the last date seen with a seven-day overlap,
+            and dbt tests on the data fail the job, so a bad load trips the same alert as a crash.
+          </li>
+          <li>
+            I learned the cost side of the choices: a managed Airflow environment costs hundreds a
+            month just sitting idle, so a scheduled serverless job taught me the same scheduling
+            and alerting patterns for a dollar or two.
+          </li>
+        </ul>
+        <p>
+          It's a lab, not a production system: one person, a sample of about 10,000 contribution
+          records by default, and simple Python loaders standing in for the ingestion tooling a
+          real platform would use.
+        </p>
+        <div class="project-links">
+          <a href="https://adamfriedl.com/pad-lab/">Live dashboard</a>
+          <a href="https://github.com/adamfriedl/pad-lab">Code on GitHub</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">intake-classification-eval</span>
+          <span class="project-date">October 2026</span>
+        </div>
+        <p>
+          A review of the answer key in the "User Intake Classification" dataset from the Stanford
+          Legal Design Lab's Legal Help Commons, and a first pass at scoring a model against it.
+          The dataset is thoughtfully built. Alongside ordinary cases it includes deliberate
+          tests: messages with crisis words that aren't emergencies, messages with no legal issue
+          at all, people caught between two jurisdictions, hostile or disorganized writers. That
+          makes it a far better test of a legal aid intake tool than a plain list of cases, and
+          it's why I wanted to work with it.
+        </p>
+        <ul>
+          <li>
+            Before running any model, I checked the labels against the LIST code list and the
+            Census county file. That turned up 46 proposed corrections, nearly all county codes,
+            and 21 rows where the dataset's two copies of the issue codes differ. I've shared
+            these with the Lab.
+          </li>
+          <li>
+            The biggest lesson was that the prompt is part of what gets measured. Most of the
+            model's issue-code misses were a more specific code on the same path in the
+            taxonomy, because my prompt asked for the most specific code. My definition of an
+            emergency ("within days") was narrower than the key's, and for legal aid intake I
+            think the key's broader standard is the right one.
+          </li>
+        </ul>
+        <p>
+          The scores come from one untuned first-pass run of one model on 180 synthetic messages,
+          with no human comparison, so they say more about my prompt's choices than about the
+          model. The next step is a run with a prompt that follows the key's conventions.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/adamfriedl/intake-classification-eval">Code and write-up on GitHub</a>
+          <a href="https://www.justicebench.org/dataset/intake-classification-inputs">The dataset</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">homelab</span>
+          <span class="project-date">May – September 2026</span>
+        </div>
+        <p>
+          A personal Google Cloud lab. I wrote the Terraform for a small environment as reusable
+          modules (a network with Cloud NAT, a VM, BigQuery, IAM), with SSH only through IAP and
+          OS Login and no open SSH from the Internet.
+        </p>
+        <p>
+          I've run and operated Terraform at work; here I wanted to write it and the CI around
+          it myself. The CI uses no stored keys: GitHub Actions authenticates through Workload
+          Identity Federation, runs <code>terraform plan</code> on every pull request, applies on
+          merge to main, then configures the VM with Ansible.
+        </p>
+        <p>
+          It's a lab, and it's scaled to zero as of October 2026, so nothing is running right
+          now. The repo has a place for data pipelines, but there aren't any active ones.
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/adamfriedl/homelab">Code on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
