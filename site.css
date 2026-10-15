@@ -1,0 +1,153 @@
+/* Shared styles for adamfriedl.com. Page-specific styles stay inline in each page. */
+
+:root {
+  --poster-blue: #0050C8;
+  --ink: #1A1A1A;
+  --muted: #5C5C5C;
+  --paper: #FFFFFF;
+  --gutter: clamp(1.5rem, 6vw, 5rem);
+  --display:
+    'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--paper);
+  color: var(--ink);
+  font-family: Inter, Helvetica, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.page a {
+  color: var(--poster-blue);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.sep {
+  user-select: none;
+}
+
+/* Link row: blue, underlined, dot-separated. Links and separators take the row's color. */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35em 0.7em;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--poster-blue);
+}
+
+.links a {
+  color: inherit;
+}
+
+/* Slim bar on inner pages: wordmark home, page nav */
+.site-bar {
+  background-color: var(--poster-blue);
+  color: var(--paper);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 1.1rem var(--gutter);
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-bar .links {
+  font-size: 1rem;
+  color: inherit;
+}
+
+.site-bar button {
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+[aria-current='page'] {
+  text-decoration: none;
+}
+
+/* Reading column */
+.page {
+  padding: var(--gutter);
+  padding-top: clamp(2rem, 4vw, 3.25rem);
+  max-width: calc(46rem + 2 * var(--gutter));
+  line-height: 1.6;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--poster-blue);
+}
+
+@media (max-width: 480px) {
+  .intro,
+  .links {
+    font-size: 1rem;
+  }
+}
+
+@media print {
+  .site-bar {
+    display: none;
+  }
+  .page {
+    padding: 0;
+    max-width: none;
+    line-height: 1.4;
+  }
+  .page a {
+    text-decoration: none;
+    color: #000;
+  }
+  .intro {
+    border-left: 2px solid #333;
+    padding-left: 0.75rem;
+  }
+}

@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Friedl — Projects</title>
+    <meta
+      name="description"
+      content="Projects by Adam Friedl, software engineer and lawyer: a data platform lab on FEC data, a review of a legal intake classification dataset, and a personal GCP lab."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="adamfriedl.com" />
+    <meta property="og:title" content="Adam Friedl — Projects" />
+    <meta property="og:description" content="Things I've built to learn and out of curiosity." />
+    <meta property="og:url" content="https://adamfriedl.com/projects.html" />
+    <meta property="og:image" content="https://adamfriedl.com/favicon.ico" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Adam Friedl — Projects" />
+    <meta name="twitter:description" content="Things I've built to learn and out of curiosity." />
+    <meta name="twitter:image" content="https://adamfriedl.com/favicon.ico" />
+
+    <link rel="canonical" href="https://adamfriedl.com/projects.html" />
+    <link rel="stylesheet" href="/site.css" />
+    <style>
+      .project {
+        font-size: 1.0625rem;
+        padding-top: 1.75rem;
+        margin-bottom: 2.5rem;
+        border-top: 2px solid var(--ink);
+      }
+
+      .project h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        line-height: 1.2;
+      }
+
+      .project-date {
+        color: var(--muted);
+        font-size: 0.95rem;
+        margin: 0.25rem 0 1rem;
+      }
+
+      .project p,
+      .project ul {
+        margin-bottom: 0.9rem;
+      }
+
+      .project ul {
+        padding-left: 1.25rem;
+      }
+
+      .project li {
+        margin-bottom: 0.5rem;
+      }
+
+      .project code {
+        font-size: 0.92em;
+      }
+
+      .project .links {
+        font-size: inherit;
+      }
+
+      .footer-links {
+        padding-top: 1.75rem;
+        border-top: 2px solid var(--ink);
+      }
+
+      @media (max-width: 480px) {
+        .project {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-bar">
+      <a class="wordmark" href="/">Adam Friedl</a>
+      <nav class="links" aria-label="Site">
+        <a href="/projects.html" aria-current="page">Projects</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/resume.html">Resume</a>
+      </nav>
+    </header>
+    <main class="page">
+      <h1 class="page-title">Projects</h1>
+      <p class="intro">
+        I like building things to understand how they work, and sometimes just because I'm curious.
+        Here are a few recent ones, with what they are and what they aren't.
+      </p>
+
+      <article class="project">
+        <h2>pad-lab</h2>
+        <p class="project-date">July – September 2026</p>
+        <p>
+          A small data platform lab built on real Federal Election Commission campaign-finance data.
+          Python loaders pull from the FEC's public API into a Cloud Storage landing bucket, then
+          BigQuery, where dbt models clean the data and build the tables behind a small public
+          dashboard. It runs once a day on its own.
+        </p>
+        <p>
+          It's modeled on Community Tech Alliance's Progressive Action Database (PAD), though it
+          isn't affiliated with CTA. I built it to learn PAD-style data platform architecture
+          hands-on. I wanted to walk each layer myself and work through observability, cost, and
+          data quality on a real dataset.
+        </p>
+        <ul>
+          <li>
+            I wrote all the infrastructure in Terraform, including the scheduled job, alerts for a
+            failed run or stale data, and a billing budget.
+          </li>
+          <li>
+            Loads are incremental, picking up from the last date seen with a seven-day overlap, and
+            dbt tests on the data fail the job, so a bad load trips the same alert as a crash.
+          </li>
+          <li>
+            I learned the cost side of the choices: a managed Airflow environment costs hundreds a
+            month just sitting idle, so a scheduled serverless job taught me the same scheduling and
+            alerting patterns for a dollar or two.
+          </li>
+        </ul>
+        <nav class="links">
+          <a href="https://adamfriedl.com/pad-lab/">Live dashboard</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="https://github.com/adamfriedl/pad-lab">Code on GitHub</a>
+        </nav>
+      </article>
+
+      <article class="project">
+        <h2>intake-classification-eval</h2>
+        <p class="project-date">October 2026</p>
+        <p>
+          A review of the answer key in the "User Intake Classification" dataset from the Stanford
+          Legal Design Lab's Legal Help Commons, and a first pass at scoring a model against it. The
+          dataset is thoughtfully built. Alongside ordinary cases it includes deliberate tests:
+          messages with crisis words that aren't emergencies, messages with no legal issue at all,
+          people caught between two jurisdictions, hostile or disorganized writers. That makes it a
+          far better test of a legal aid intake tool than a plain list of cases, and it's why I
+          wanted to work with it.
+        </p>
+        <ul>
+          <li>
+            Before running any model, I checked the labels against the LIST code list and the Census
+            county file. That turned up proposed corrections, which I've shared with the Lab.
+          </li>
+          <li>
+            The biggest lesson was that the prompt is part of what gets measured. Most of the
+            model's issue-code misses were a more specific code on the same path in the taxonomy,
+            because my prompt asked for the most specific code. My definition of an emergency
+            ("within days") was narrower than the key's, and for legal aid intake I think the key's
+            broader standard is the right one.
+          </li>
+        </ul>
+        <p>
+          On the dataset's designed tests, the model flagged all 10 real emergencies and wasn't
+          fooled by any of the 10 messages with crisis words in a non-urgent context, though my
+          narrower emergency definition made the second easier. It's a first-pass baseline (one run,
+          180 synthetic messages), and the next run uses a prompt that follows the key's
+          conventions. The scripts were written with Claude Code, and I reviewed them and the
+          scoring choices; a second, independently written scorer checked the figures.
+        </p>
+        <nav class="links">
+          <a href="https://github.com/adamfriedl/intake-classification-eval"
+            >Code and write-up on GitHub</a
+          >
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="https://www.justicebench.org/dataset/intake-classification-inputs"
+            >The dataset</a
+          >
+        </nav>
+      </article>
+
+      <article class="project">
+        <h2>homelab</h2>
+        <p class="project-date">May – September 2026</p>
+        <p>
+          A personal Google Cloud lab. I wrote the Terraform for a small environment as reusable
+          modules (a network with Cloud NAT, a VM, BigQuery, IAM), with SSH only through IAP and OS
+          Login and no open SSH from the Internet.
+        </p>
+        <p>
+          At work I've run and operated Terraform; here I wrote it and the CI around it from
+          scratch. The CI uses no stored keys: GitHub Actions authenticates through Workload
+          Identity Federation, runs <code>terraform plan</code> on every pull request, applies on
+          merge to main, then configures the VM with Ansible.
+        </p>
+        <nav class="links">
+          <a href="https://github.com/adamfriedl/homelab">Code on GitHub</a>
+        </nav>
+      </article>
+
+      <nav class="links footer-links" aria-label="Contact">
+        <a href="mailto:me@adamfriedl.com">Email</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://github.com/adamfriedl">GitHub</a>
+      </nav>
+    </main>
+  </body>
+</html>

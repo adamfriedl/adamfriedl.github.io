@@ -4,31 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adam Friedl</title>
+    <link rel="stylesheet" href="/site.css" />
     <style>
-      :root {
-        --poster-blue: #0050C8;
-        --ink: #1A1A1A;
-        --paper: #FFFFFF;
-        --gutter: clamp(1.5rem, 6vw, 5rem);
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        min-height: 100%;
-      }
-
-      body {
-        background-color: var(--paper);
-        color: var(--ink);
-        font-family: Inter, Helvetica, system-ui, sans-serif;
-      }
-
       .poster {
         min-height: 58vh;
         background-color: var(--poster-blue);
@@ -38,8 +15,7 @@
       }
 
       .name {
-        font-family:
-          'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+        font-family: var(--display);
         font-weight: 800;
         font-size: clamp(2.75rem, calc((100vw - 2 * var(--gutter)) / 4.3), 11rem);
         line-height: 0.86;
@@ -53,11 +29,6 @@
         display: block;
       }
 
-      .content {
-        padding: var(--gutter);
-        padding-top: clamp(2rem, 4vw, 3.25rem);
-      }
-
       .bio {
         font-size: 1.125rem;
         line-height: 1.6;
@@ -65,37 +36,8 @@
         margin-bottom: 1.75rem;
       }
 
-      .links {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        gap: 0.35em 0.7em;
-        font-size: 1.125rem;
-        font-weight: 600;
-      }
-
-      .links a {
-        color: var(--poster-blue);
-        text-decoration: underline;
-        text-decoration-color: var(--poster-blue);
-        text-decoration-thickness: 1px;
-        text-underline-offset: 0.18em;
-      }
-
-      .links a:focus-visible {
-        outline: 2px solid var(--poster-blue);
-        outline-offset: 3px;
-      }
-
-      .links .sep {
-        color: var(--poster-blue);
-        font-weight: 600;
-        user-select: none;
-      }
-
       @media (max-width: 480px) {
-        .bio,
-        .links {
+        .bio {
           font-size: 1rem;
         }
       }
@@ -108,9 +50,9 @@
         <span>Friedl</span>
       </h1>
     </header>
-    <main class="content">
+    <main class="page">
       <p class="bio">
-        Software engineer and lawyer. Thanks for stopping by my corner of the internet!
+        Software engineer and lawyer. Reading the fine print for a living.
       </p>
       <nav class="links" aria-label="Contact">
         <a href="mailto:me@adamfriedl.com">Email</a>
@@ -118,6 +60,8 @@
         <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
         <span class="sep" aria-hidden="true">·</span>
         <a href="/resume.html">Resume</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/projects.html">Projects</a>
       </nav>
     </main>
   </body>
