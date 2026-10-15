@@ -370,7 +370,8 @@
         <p>
           The scores come from one untuned first-pass run of one model on 180 synthetic messages,
           with no human comparison, so they say more about my prompt's choices than about the
-          model. The next step is a run with a prompt that follows the key's conventions.
+          model. The next step is a run with a prompt that follows the key's conventions. The
+          scripts were written with Claude Code, and I reviewed them and the scoring choices.
         </p>
         <div class="project-links">
           <a href="https://github.com/adamfriedl/intake-classification-eval">Code and write-up on GitHub</a>
@@ -389,8 +390,8 @@
           OS Login and no open SSH from the Internet.
         </p>
         <p>
-          I've run and operated Terraform at work; here I wanted to write it and the CI around
-          it myself. The CI uses no stored keys: GitHub Actions authenticates through Workload
+          At work I've run and operated Terraform; here I wrote it and the CI around it from
+          scratch. The CI uses no stored keys: GitHub Actions authenticates through Workload
           Identity Federation, runs <code>terraform plan</code> on every pull request, applies on
           merge to main, then configures the VM with Ansible.
         </p>
