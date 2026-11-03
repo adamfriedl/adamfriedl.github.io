@@ -19,7 +19,9 @@
       .poster {
         background-color: var(--poster-blue);
         display: flex;
-        align-items: flex-end;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
         padding: var(--gutter);
         padding-top: calc(var(--gutter) * 2);
       }
@@ -39,6 +41,11 @@
         display: block;
       }
 
+      .poster-links {
+        color: var(--paper);
+        margin-top: 1.5rem;
+      }
+
       .bio {
         font-size: 1.125rem;
         line-height: 1.6;
@@ -55,7 +62,6 @@
       }
 
       .recent {
-        margin-bottom: 2rem;
         padding-top: 1.5rem;
         border-top: 2px solid var(--ink);
       }
@@ -93,6 +99,17 @@
         <span>Adam</span>
         <span>Friedl</span>
       </h1>
+      <nav class="links poster-links" aria-label="Contact">
+        <a href="mailto:ajfriedl@gmail.com">Email</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://github.com/adamfriedl">GitHub</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/resume.html">Resume</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/projects.html">Projects</a>
+      </nav>
     </header>
     <main class="page">
       <div class="bio">
@@ -132,18 +149,6 @@
           </li>
         </ul>
       </section>
-
-      <nav class="links" aria-label="Contact">
-        <a href="mailto:ajfriedl@gmail.com">Email</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a href="https://github.com/adamfriedl">GitHub</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a href="/resume.html">Resume</a>
-        <span class="sep" aria-hidden="true">·</span>
-        <a href="/projects.html">Projects</a>
-      </nav>
     </main>
   </body>
 </html>
