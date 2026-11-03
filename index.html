@@ -4,6 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adam Friedl</title>
+    <meta
+      name="description"
+      content="Adam Friedl, software engineer and lawyer: a decade in legal services and access to justice, then eight years of engineering, most recently building AI agents used in production."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="adamfriedl.com" />
+    <meta property="og:title" content="Adam Friedl" />
+    <meta property="og:description" content="Software engineer and lawyer." />
+    <meta property="og:url" content="https://adamfriedl.com/" />
+    <link rel="canonical" href="https://adamfriedl.com/" />
     <link rel="stylesheet" href="/site.css" />
     <style>
       .poster {
@@ -32,8 +42,42 @@
       .bio {
         font-size: 1.125rem;
         line-height: 1.6;
-        max-width: 42ch;
+        max-width: 60ch;
         margin-bottom: 1.75rem;
+      }
+
+      .bio p + p {
+        margin-top: 1rem;
+      }
+
+      .bio .lede {
+        font-weight: 600;
+      }
+
+      .recent {
+        margin-bottom: 2rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--ink);
+      }
+
+      .recent h2 {
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        margin-bottom: 1rem;
+      }
+
+      .recent ul {
+        list-style: none;
+      }
+
+      .recent li {
+        margin-bottom: 0.9rem;
+      }
+
+      .recent li a {
+        font-weight: 700;
       }
 
       @media (max-width: 480px) {
@@ -51,11 +95,45 @@
       </h1>
     </header>
     <main class="page">
-      <p class="bio">Software engineer and lawyer</p>
+      <div class="bio">
+        <p class="lede">Software engineer and lawyer</p>
+        <p>
+          I spent a decade in legal services and access to justice, representing families in
+          housing, benefits, and custody cases and building programs for people without lawyers.
+          Then I spent eight years engineering at Rakuten Advertising, from junior engineer to
+          leading a squad, most recently building AI agents used in production.
+        </p>
+        <p>
+          What ties it together is working on systems that have an outsized effect on people's
+          lives, and making them work better.
+        </p>
+      </div>
+
+      <section class="recent" aria-labelledby="recent-heading">
+        <h2 id="recent-heading">Recent projects</h2>
+        <ul>
+          <li>
+            <a href="/projects.html#intake-classification-eval">intake-classification-eval</a>:
+            two model runs against a legal aid intake dataset from Stanford's Legal Design Lab,
+            showing how much the prompt shapes the results.
+          </li>
+          <li>
+            <a href="/projects.html#pad-lab">pad-lab</a>: a small data platform on public FEC
+            campaign-finance data, with Terraform, dbt, BigQuery, and a live dashboard.
+          </li>
+          <li>
+            <a href="/projects.html#homelab">homelab</a>: a Google Cloud lab with reusable
+            Terraform modules and keyless CI.
+          </li>
+        </ul>
+      </section>
+
       <nav class="links" aria-label="Contact">
-        <a href="mailto:me@adamfriedl.com">Email</a>
+        <a href="mailto:ajfriedl@gmail.com">Email</a>
         <span class="sep" aria-hidden="true">·</span>
         <a href="https://www.linkedin.com/in/adamfriedl">LinkedIn</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="https://github.com/adamfriedl">GitHub</a>
         <span class="sep" aria-hidden="true">·</span>
         <a href="/resume.html">Resume</a>
         <span class="sep" aria-hidden="true">·</span>
