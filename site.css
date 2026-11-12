@@ -1,13 +1,18 @@
-/* Shared styles for adamfriedl.com. Page-specific styles stay inline in each page. */
+/* Shared styles for adamfriedl.com. Page-specific styles stay inline in each page.
+   Dark on screen; light when printed (see the print block at the end). */
 
 :root {
-  --poster-blue: #0050C8;
-  --ink: #1A1A1A;
-  --muted: #5C5C5C;
-  --paper: #FFFFFF;
-  --gutter: clamp(1.5rem, 6vw, 5rem);
-  --display:
-    'Helvetica Neue Condensed', 'Helvetica Condensed', 'Arial Narrow', sans-serif;
+  --bg: #0A0E1A;
+  --surface: #10172A;
+  --ink: #E8ECF5;
+  --muted: #A3ACC0;
+  --accent: #FFB020;
+  --rule: #263048;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --display: 'IBM Plex Sans Condensed', 'Arial Narrow', Arial, sans-serif;
+  --body: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: dark;
 }
 
 * {
@@ -22,78 +27,79 @@ body {
 }
 
 body {
-  background-color: var(--paper);
+  background-color: var(--bg);
   color: var(--ink);
-  font-family: Inter, Helvetica, system-ui, sans-serif;
+  font-family: var(--body);
   -webkit-font-smoothing: antialiased;
 }
 
 a {
+  color: var(--accent);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
 }
 
-.page a {
-  color: var(--poster-blue);
-}
-
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
 .sep {
   user-select: none;
+  color: var(--muted);
 }
 
-/* Link row: blue, underlined, dot-separated. Links and separators take the row's color. */
+/* Link row: amber, mono, underlined. */
 .links {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.35em 0.7em;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--poster-blue);
+  gap: 0.35em 1.1em;
+  font-family: var(--mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent);
 }
 
 .links a {
   color: inherit;
 }
 
+.links .sep {
+  display: none;
+}
+
 /* Slim bar on inner pages: wordmark home, page nav */
 .site-bar {
-  background-color: var(--poster-blue);
-  color: var(--paper);
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   gap: 0.5rem 1.5rem;
   padding: 1.1rem var(--gutter);
+  border-bottom: 1px solid var(--rule);
 }
 
 .wordmark {
   font-family: var(--display);
-  font-weight: 800;
-  font-size: 1.6rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   line-height: 1;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: inherit;
+  color: #fff;
   text-decoration: none;
 }
 
 .site-bar .links {
-  font-size: 1rem;
-  color: inherit;
+  font-size: 0.9rem;
 }
 
 .site-bar button {
   font: inherit;
   color: inherit;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
   background: none;
   border: 0;
   cursor: pointer;
@@ -101,6 +107,7 @@ button:focus-visible {
 
 [aria-current='page'] {
   text-decoration: none;
+  color: var(--ink);
 }
 
 /* Reading column */
@@ -112,10 +119,11 @@ button:focus-visible {
 }
 
 .page-title {
-  font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
@@ -123,17 +131,26 @@ button:focus-visible {
   font-size: 1.125rem;
   margin-bottom: 2.5rem;
   padding-left: 1.25rem;
-  border-left: 3px solid var(--poster-blue);
+  border-left: 3px solid var(--accent);
 }
 
 @media (max-width: 480px) {
-  .intro,
-  .links {
+  .intro {
     font-size: 1rem;
   }
 }
 
+/* Printed (the resume's Print / PDF button): black on white, no bar. */
 @media print {
+  :root {
+    --bg: #fff;
+    --surface: #fff;
+    --ink: #1A1A1A;
+    --muted: #5C5C5C;
+    --accent: #1A1A1A;
+    --rule: #CCCCCC;
+    color-scheme: light;
+  }
   .site-bar {
     display: none;
   }
@@ -142,9 +159,15 @@ button:focus-visible {
     max-width: none;
     line-height: 1.4;
   }
+  .page-title {
+    color: #000;
+  }
   .page a {
     text-decoration: none;
     color: #000;
+  }
+  .links .sep {
+    display: inline;
   }
   .intro {
     border-left: 2px solid #333;
