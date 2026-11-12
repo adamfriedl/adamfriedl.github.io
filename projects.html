@@ -6,7 +6,7 @@
     <title>Adam Friedl — Projects</title>
     <meta
       name="description"
-      content="Projects by Adam Friedl, software engineer and lawyer: a map of debt-collection lawsuits and civil legal aid, a model evaluation on a legal intake classification dataset, a data platform lab on FEC data, and a personal GCP lab."
+      content="Projects by Adam Friedl, software engineer and lawyer: who files debt-collection lawsuits and how the cases end, a model evaluation on a legal intake classification dataset, and a data platform lab on FEC data."
     />
 
     <meta property="og:type" content="website" />
@@ -22,23 +22,31 @@
     <meta name="twitter:image" content="https://adamfriedl.com/favicon.ico" />
 
     <link rel="canonical" href="https://adamfriedl.com/projects.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/site.css" />
     <style>
       .project {
         font-size: 1.0625rem;
         padding-top: 1.75rem;
         margin-bottom: 2.5rem;
-        border-top: 2px solid var(--ink);
+        border-top: 1px solid var(--rule);
       }
 
       .project h2 {
-        font-size: 1.5rem;
-        font-weight: 800;
-        letter-spacing: -0.01em;
+        font-family: var(--display);
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #fff;
         line-height: 1.2;
       }
 
       .project-date {
+        font-family: var(--mono);
         color: var(--muted);
         font-size: 0.95rem;
         margin: 0.25rem 0 1rem;
@@ -67,7 +75,7 @@
 
       .footer-links {
         padding-top: 1.75rem;
-        border-top: 2px solid var(--ink);
+        border-top: 1px solid var(--rule);
       }
 
       @media (max-width: 480px) {
@@ -93,45 +101,48 @@
         Here are a few recent ones, with what they are and what they aren't.
       </p>
 
-      <article class="project" id="justice-gap-map">
-        <h2>justice-gap-map</h2>
+      <article class="project" id="debt-docket">
+        <h2>debt-docket</h2>
         <p class="project-date">November 2026 – ongoing</p>
         <p>
-          Where are debt-collection lawsuits filed, and how does that line up with the civil legal
-          aid available? Debt collectors file hundreds of thousands of suits a year in state
-          courts, and many end in default judgments. This project pulls public court, credit,
-          Census, and legal aid data into county tables and an interactive map. So far it covers
-          the three states whose courts publish debt suits by county in a form a script can read:
-          Texas, Indiana, and Virginia.
+          Who files debt-collection lawsuits, for how much, and how the cases end, counted from
+          public court records. The main piece covers the justice courts of Harris County, Texas
+          (Houston): 206,858 debt claims filed from January 2025 to November 2026. Ten companies
+          filed three quarters of them, most of them debt buyers, and the median claim was about
+          $3,700. A daily job keeps it current.
         </p>
         <p>
-          It's descriptive. It reports what public records show about places, not why, and it
-          doesn't judge legal aid providers or their funders. There's no national count of debt
-          lawsuits, so a blank state on the map means no data, not no lawsuits.
+          It started as a map of where debt suits are filed set against where legal aid is. I
+          tested the obvious measures before building on them, and the legal aid side didn't hold
+          up: public data shows offices and funding, not who actually gets help. So the project
+          turned to what court records do show well, which is the filing side of the docket. It
+          reports what the records show, not why.
         </p>
         <ul>
           <li>
-            I checked the obvious measures before building on them, and two failed. CFPB complaints
-            don't measure need: in Texas, the poorest counties have the most debt in collections
-            and the fewest complaints. Federal legal aid funding doesn't measure capacity: the
-            formula is nearly flat per eligible person. Court filings and credit data replaced
-            them.
+            Three measures failed on the way, and the write-ups say so. CFPB complaints don't
+            track need: in Texas the poorest counties complain least. Federal legal aid funding
+            is nearly flat per eligible person by formula. Office locations measure buildings,
+            not help.
           </li>
           <li>
-            Texas justice courts took 106,061 debt claims in 2014 and 518,852 in 2025. The highest
-            rates are in fast-growing suburbs around Dallas–Fort Worth and Houston, not the poorer
-            border counties, so no single national measure stands in for court data.
+            The records also show whether a defendant had a lawyer. About 12% did, and their
+            cases ended in a default judgment far less often. That describes the records; it
+            doesn't show what a lawyer changes.
           </li>
           <li>
-            The pipeline is Python and DuckDB, moving onto AWS with all infrastructure in
-            Terraform: GitHub Actions signs in with short-lived tokens, posts a plan on every pull
-            request, and applies on merge. I build it with AI coding agents under written rules,
+            The pipeline runs on AWS, all in Terraform: a scheduled Lambda archives the county's
+            extract in an S3 bucket locked against changes, and Athena queries it in place.
+            GitHub Actions posts a plan on every pull request and applies on merge, signing in
+            with short-lived credentials. I build it with AI coding agents under written rules,
             including read-only cloud access for agents and no names or addresses of people sued,
             ever.
           </li>
         </ul>
         <nav class="links">
-          <a href="https://adamfriedl.github.io/justice-gap-map/">Interactive map</a>
+          <a href="https://adamfriedl.github.io/justice-gap-map/docket/">The Harris County docket</a>
+          <span class="sep" aria-hidden="true">·</span>
+          <a href="https://adamfriedl.github.io/justice-gap-map/">County maps: Texas, Indiana, Virginia</a>
           <span class="sep" aria-hidden="true">·</span>
           <a href="https://github.com/adamfriedl/justice-gap-map">Code and write-ups on GitHub</a>
         </nav>
@@ -214,25 +225,6 @@
           <a href="https://www.justicebench.org/dataset/intake-classification-inputs"
             >The dataset</a
           >
-        </nav>
-      </article>
-
-      <article class="project" id="homelab">
-        <h2>homelab</h2>
-        <p class="project-date">May – September 2026</p>
-        <p>
-          A personal Google Cloud lab. I wrote the Terraform for a small environment as reusable
-          modules (a network with Cloud NAT, a VM, BigQuery, IAM), with SSH only through IAP and OS
-          Login and no open SSH from the Internet.
-        </p>
-        <p>
-          At work I've run and operated Terraform; here I wrote it and the CI around it from
-          scratch. The CI uses no stored keys: GitHub Actions authenticates through Workload
-          Identity Federation, runs <code>terraform plan</code> on every pull request, applies on
-          merge to main, then configures the VM with Ansible.
-        </p>
-        <nav class="links">
-          <a href="https://github.com/adamfriedl/homelab">Code on GitHub</a>
         </nav>
       </article>
 
